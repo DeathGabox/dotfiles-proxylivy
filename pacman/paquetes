@@ -3,3 +3,7 @@ pacman -S bpytop code discord fish lxappearance kitty libreoffice-fresh libreoff
 &&
 
 yay -S deemix-gui lightscreen
+
+Modificar /etc/pacman/conf
+ > quitar "#" en ParallelDownload=5
+Acelerar Pacman con deflector
