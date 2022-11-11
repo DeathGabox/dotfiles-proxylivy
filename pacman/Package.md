@@ -1,5 +1,5 @@
-[Pacman Arch]
-[Repositorios]
+[Pacman Arch](https://wiki.archlinux.org/title/Pacman)
+[Repositorios](https://wiki.archlinux.org/title/Official_repositories)
 
 Optimizar Pacman
 ```
