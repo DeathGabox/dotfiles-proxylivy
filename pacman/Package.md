@@ -6,8 +6,7 @@ Optimizar Pacman
 - Modificar /etc/pacman/conf
 - quitar "#" en ParallelDownload=5
 ```
-__
-
+---
 ```
 pacman -S bpytop code discord fish lxappearance kitty libreoffice-fresh libreoffice-fresh-es micro nano mousepad mpv smplayer smplayer-skins smplayer-themes picard nomacs obsidian qt5ct lsd bat reflector rsync curl
 ```
