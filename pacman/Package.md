@@ -29,7 +29,7 @@ sudo reflector --fastest 10 --country US --protocol https --sort rate --save /et
 ```
 
 [Mas Informacion(Youtube)](https://www.youtube.com/watch?v=G6Onhz1lLA0)
-Automatizar este proceso (En el boot)
+:sparkles: :sparkles: Automatizar este proceso (En el boot) :sparkles: :sparkles:
 ```
 - sudo nano /etc/xdg/reflector/reflector.conf
 - sudo sytemctl enable reflector.service
