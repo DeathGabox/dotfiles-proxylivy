@@ -41,6 +41,7 @@ sudo ./strap.sh
 ```
 ```
 sudo su
+```
 - /etc/sudoers
 - - Descomenta %wheel ALL=(ALL:ALL) ALL
 - /etc/vconsole.conf
@@ -52,4 +53,3 @@ sudo su
 - - Descomenta en_US.UTF-8 UTF8
                es_CL.UTF-8 UTF8
 - - - locale-gen
-```
