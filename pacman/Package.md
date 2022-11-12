@@ -8,7 +8,10 @@ Optimizar Pacman
 ```
 ---
 ```
-pacman -S bpytop code discord fish lxappearance-gtk3 kitty libreoffice-fresh libreoffice-fresh-es micro nano mousepad mpv smplayer smplayer-skins smplayer-themes picard nomacs obsidian qt5ct lsd bat reflector rsync curl
+pacman -S atool elinks git ffmpegthumbnailer highlight libcaca lynx mediainfo bpytop code discord fish lxappearance-gtk3 kitty libreoffice-fresh libreoffice-fresh-es micro nano mousepad mpv smplayer smplayer-skins smplayer-themes picard nomacs obsidian qt5ct lsd bat reflector rsync curl
+```
+``` 
+pacman -S --needed base-devel git
 ```
 ```
 yay -S deemix-gui lightscreen
