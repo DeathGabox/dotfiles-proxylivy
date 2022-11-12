@@ -21,6 +21,7 @@ systemctl enable wpa_supplicant.service
 fc-cache -f -v
 timedatectl set-ntp true
 timedatectl set-timezone America/Santiago
+localectl set-locale LANG=es_CL.utf8
 amixer sset Master unmute
 amixer sset Speaker unmute
 amixer sset Headphone unmute
