@@ -43,13 +43,16 @@ sudo ./strap.sh
 sudo su
 ```
 - /etc/sudoers
-- - Descomenta %wheel ALL=(ALL:ALL) ALL
+Descomenta
+- - %wheel ALL=(ALL:ALL) ALL
 - /etc/vconsole.conf
-- - Escribe KEYMAP=es
+Agrega
+- - KEYMAP=es
 - /etc/hosts
 - - 127.0.0.1 localhost
-    ::1 localhost
+- - ::1 localhost
 - /etc/locale.gen
-- - Descomenta en_US.UTF-8 UTF8
-               es_CL.UTF-8 UTF8
+Descomenta
+- - en_US.UTF-8 UTF8
+- - es_CL.UTF-8 UTF8
 - - - locale-gen
