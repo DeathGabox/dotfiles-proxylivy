@@ -1,17 +1,19 @@
 # Dotfiles
 Config Files :D
-
+$USER == Usuario
 
 ---
 Install
 ```
 sudo su
-useradd -m deathgabox
-passwd deathgabox
-usermod -aG wheel deathgabox
+setxkbmap es
+useradd -m $USER
+passwd $USER
+passwd root
+usermod -aG wheel $USER
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
-echo aspire575g > /etc/hostname
+echo "Hostname" > /etc/hostname
 systemctl start NetworkManager.service
 systemctl enable NetwokManager
 systemctl start wpa_supplicant.service
@@ -23,9 +25,7 @@ amixer sset Master unmute
 amixer sset Speaker unmute
 amixer sset Headphone unmute
 alsamixer
-passwd root
-setxkbmap es
-mkdir -p /home/deathgabox/Documentos/github
+mkdir -p /home/$USER/Documentos/github
 cd $!
 git clone https://aur.archlinux.org/yay.git
 cd yay
