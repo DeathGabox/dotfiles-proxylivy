@@ -11,3 +11,9 @@ cd /home/$USER/Documentos/github
 git clone https://github.com/EliverLara/Nordic.git
 sudo mv Nordic/ /usr/share/themes
 ``` 
+``` 
+cd /home/$USER/Descargas 
+wget (LINK A VOLANTE CURSOR PLING)
+tar xf volantes-cursors.tar.gz
+mv volantes_cursors/ /usr/share/icons/
+```
