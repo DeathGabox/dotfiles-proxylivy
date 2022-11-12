@@ -42,13 +42,14 @@ sudo ./strap.sh
 ```
 sudo su
 - /etc/sudoers
-- - Modifica TANTO
+- - Descomenta %wheel ALL=(ALL:ALL) ALL
 - /etc/vconsole.conf
-- - Modifica TANTO
+- - Escribe KEYMAP=es
 - /etc/hosts
-- - Modifica TANTO
+- - 127.0.0.1 localhost
+    ::1 localhost
 - /etc/locale.gen
-- - modifica TANTO
+- - Descomenta en_US.UTF-8 UTF8
+               es_CL.UTF-8 UTF8
 - - - locale-gen
 ```
-PONER LOS WGET de los archivos
