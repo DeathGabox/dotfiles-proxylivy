@@ -3,7 +3,7 @@ I USE https://github.com/catppuccin/qt5ct
 ### Tutorial
 ```
 sudo su
-Edit /etc/environment & /etc/environment and add the line QT_QPA_PLATFORMTHEME=qt5ct and save.
+Edit /etc/environment & add the line QT_QPA_PLATFORMTHEME=qt5ct and save.
 ```
 ---
 - user config: /home/deathgabox/.config/qt5ct/
