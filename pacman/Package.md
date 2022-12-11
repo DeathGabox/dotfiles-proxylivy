@@ -14,7 +14,7 @@ pacman -S sudo wget ranger htop bpytop kitty python-pygments atool elinks git ff
 pacman -S --needed base-devel git
 ```
 ```
-yay -S deemix-gui-appimage lightscreen
+yay -S deemix-gui-appimage lightscreen mkinitcpio-firmware
 ```
 
 Acelerar Pacman con deflector (Elige solo 1)
