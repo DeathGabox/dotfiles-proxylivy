@@ -39,6 +39,7 @@ cd blackarch/
 curl -0 https://blackarch.org/strap.sh
 chmod +x strap.sh
 sudo ./strap.sh
+sudo systemctl enable emptty
 ```
 ```
 sudo su
