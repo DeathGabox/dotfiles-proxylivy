@@ -114,6 +114,11 @@ systemctl enable wpa_supplicant.service
 ping -c 1 google.cl
 ```
 
+- Instalar Paquetes
+```
+pacman -S xorg xorg-server qtile kitty 
+```
+
 - Instalar Git y YAY
 ```
 pacman -S git
@@ -123,47 +128,35 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 exit
 makepkg -si
+sudo su
 cd ../..
 mkdir blackarch
 cd !$
 curl -0 https://blackarch.org/strap.sh
 chmod +x strap.sh
-sudo ./strap.sh
-
-
-
-
-
----
----
-
-
-Post Install :D
+./strap.sh
+cd ..
+yay -S emptty (Si no funciona, probar con emptty-git)
+systemctl enable emptty
+pacman -Sy
 ```
 
-
-fc-cache -f -v
-timedatectl set-ntp true
-timedatectl set-timezone America/Santiago
-localectl set-locale LANG=es_CL.utf8
+- Activar sonido
+```
 amixer sset Master unmute
 amixer sset Speaker unmute
 amixer sset Headphone unmute
 alsamixer
+``` 
 
-sudo systemctl enable emptty
+- Timedate
 ```
+timedatectl set-ntp true
+timedatectl set-timezone America/Santiago
+localectl set-locale LANG=es_CL.utf8
 ```
-sudo su
+
+- Fuentes
 ```
-- /etc/sudoers (Descomenta)
-- - %wheel ALL=(ALL:ALL) ALL
-- /etc/vconsole.conf (Agrega)
-- - KEYMAP=es
-- /etc/hosts
-- - 127.0.0.1 localhost
-- - ::1 localhost
-- /etc/locale.gen (Descomenta)
-- - en_US.UTF-8 UTF8
-- - es_CL.UTF-8 UTF8
-- - - locale-gen
+
+```
