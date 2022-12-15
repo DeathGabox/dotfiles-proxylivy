@@ -119,7 +119,7 @@ ping -c 1 google.cl
 pacman -S xorg xorg-server qtile kitty 
 ```
 
-- Instalar Git y YAY
+- Instalar Git, yay, Blackarch, emptty
 ```
 pacman -S git
 mkdir -p Desktop/$USER/repos
