@@ -49,9 +49,19 @@ pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
+```
 
+- Crear Usuarios
+```
+arch-chroot /mnt
+passwd
+useradd -m $USER
+passwd $USER
+usermod -aG wheel $USER
+```
 
-
+- Sudo Config
+```
 
 
 
