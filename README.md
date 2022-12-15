@@ -3,8 +3,31 @@ Config Files :D
 $USER == Usuario
 
 ---
-Install
+Install ARCH LINUX
 ```
+- Testear la conectividad de internet
+ping -c 1 google.cl
+
+- Cambiar layout a español
+loadkeys es
+
+- Particiones
+cfdisk
+  crear particion de 512M
+  crear particion dejando 4G
+  crear particion de 4G
+    Apretar TANTO
+
+
+
+
+
+
+
+```
+Post Install :D
+```
+
 sudo su
 setxkbmap es
 useradd -m $USER
