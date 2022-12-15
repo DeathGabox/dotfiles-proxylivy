@@ -4,6 +4,7 @@ $USER == Usuario
 
 ---
 Install ARCH LINUX
+
 - Testear la conectividad de internet
 ```
 ping -c 1 google.cl
@@ -17,10 +18,51 @@ loadkeys es
 - Particiones
 ```
 cfdisk
-  crear particion de 512M
-  crear particion dejando 4G
-  crear particion de 4G
-    Apretar TANTO
+  dev/sda1 512M/Primary/Linux
+  dev/sda2 dejando 4G/Primary/Linux
+  dev/sda3 4G/Primary/Linux Swap
+  "Write" y salir
+```
+
+- Revisar las particiones
+```
+lsblk
+```
+
+- Crear Sistema de ficheros
+```
+mkfs.vfat -F 32 /dev/sda1
+mkfs.ext4 /dev/sda2
+mkswap /dev/sda3
+swapon
+```
+
+- Montar particiones e instalar paquetes
+```
+mount /dev/sda2 /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel
+```
+
+- Crear Fstab
+```
+genfstab -U /mnt >> /mnt/etc/fstab
+cat /mnt/etc/fstab
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
