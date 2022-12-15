@@ -62,22 +62,49 @@ usermod -aG wheel $USER
 
 - Sudo Config
 ```
+pacman -Sy sudo nano
+nano /etc/sudoers
+  descomentar %wheel ALL=(ALL:ALL) ALL
+              root ALL=(ALL:ALL) ALL
+```
 
+- Configurar idiomas
+```
+nano /etc/locale.gen
+  descomentar en_US.UTF-8 UTF-8
+              es_ES.UTF-8 UTF-8
+locale-gen
+```
 
+- Keymap
+```
+nano /etc/vconsole.conf
+  KEYMAP=es
+```
 
+- Montar Bootloader
+```
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+```
 
+- Hostname
+```
+echo $HOSTNAME > /etc/hostname
+nano /etc/hosts
+  Agregar la linea 127.0.0.1    $HOSTNAME.localhost $HOSTNAME
+```
 
+- Lujitos
+```
+pacman -S neofetch
+neofetch
+exit
+reboot now
+```
 
-
-
-
-
-
-
-
-
-
-
+---
+---
 
 
 ```
