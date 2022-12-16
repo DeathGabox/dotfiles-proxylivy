@@ -7,7 +7,6 @@ core
 extra
 community
 multilib
-
 ```
 
 Optimizar Pacman
