@@ -31,7 +31,7 @@ sudo pacman -S intel-gmmlib intel-media-driver intel-ucode libmfx libva-intel-dr
 ```
 Dependencias Lib32
 ```
-lib32-libva-intel-driver
+sudo pacman -S lib32-libva-intel-driver
 ```
 
 ---
