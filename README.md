@@ -1,6 +1,6 @@
 # Dotfiles
 
-PONER TODOS LOS TITULOS EN READMES Y ADJUNTARLOS PARA QUE SE VEA MAS BONITO
+[Install Arch By Me UwU]()
 
 [RTFM](https://wiki.archlinux.org/title/Installation_guide)
 
