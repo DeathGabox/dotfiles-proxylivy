@@ -11,3 +11,6 @@
 ---
 
 ### Pacman/YAY
+[Pacman](https://github.com/DeathGabox/Dotfiles/blob/main/Install/Pacman.md)
+
+---
