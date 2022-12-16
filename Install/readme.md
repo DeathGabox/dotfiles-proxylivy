@@ -1,3 +1,5 @@
+[Inicio](https://github.com/DeathGabox/Dotfiles/blob/main/README.md)
+
 Install ARCH LINUX
 
 - Testear la conectividad de internet
