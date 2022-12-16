@@ -38,11 +38,11 @@ lib32-libva-intel-driver
 ## Mesa/Vulkan
 Install
 ```
-sudo pacman -S vulkan-intel glu libva-mesa-driver mesa mesa-demos mesa-vdpau vulkan-mesa-layers vulkan-radeon
+sudo pacman -S vulkan-intel glu libva-mesa-driver mesa mesa-demos mesa-vdpau vulkan-mesa-layers vulkan-radeon vulkan-icd-loader vulkan-devel vulkan-swrast
 ```
 
 Dependencias Lib32
 ```
-lib32-vulkan-intel lib32-glu lib32-libva-mesa-driver lib32-mesa lib32-mesa-demos lib32-mesa-vdpau lib32-vulkan-mesa-layers lib32-vulkan-radeon 
+lib32-vulkan-intel lib32-glu lib32-libva-mesa-driver lib32-mesa lib32-mesa-demos lib32-mesa-vdpau lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-icd-loader 
 ```
 
