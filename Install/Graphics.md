@@ -29,6 +29,10 @@ Install
 ```
 sudo pacman -S intel-gmmlib intel-media-driver intel-ucode libmfx libva-intel-driver libva-utils
 ```
+Dependencias Lib32
+```
+lib32-libva-intel-driver
+```
 
 ---
 ## Mesa/Vulkan
@@ -36,8 +40,9 @@ Install
 ```
 sudo pacman -S vulkan-intel
 ```
+
 Dependencias Lib32
 ```
-
+lib32-vulkan-intel
 ```
 
