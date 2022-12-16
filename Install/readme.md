@@ -1,4 +1,4 @@
-[Inicio](https://github.com/DeathGabox/Dotfiles)
+[Inicio](https://github.com/DeathGabox/Dotfiles#dotfiles)
 
 Install ARCH LINUX
 
