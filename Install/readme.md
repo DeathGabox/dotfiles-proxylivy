@@ -1,4 +1,4 @@
-[Inicio](https://github.com/DeathGabox/Dotfiles/blob/main/README.md)
+[Inicio](https://github.com/DeathGabox/Dotfiles)
 
 Install ARCH LINUX
 
