@@ -1,6 +1,15 @@
 [Pacman Arch](https://wiki.archlinux.org/title/Pacman)
 [Repositorios](https://wiki.archlinux.org/title/Official_repositories)
 
+Usar repositorios
+```
+core
+extra
+community
+multilib
+
+```
+
 Optimizar Pacman
 
 - Modificar ``` /etc/pacman/conf ```
