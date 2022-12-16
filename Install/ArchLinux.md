@@ -153,7 +153,7 @@ timedatectl set-timezone America/Santiago
 localectl set-locale LANG=es_CL.utf8
 ```
 
-- Fuentes
+- Fuentes Asiaticas
 ```
-
+pacman -S asian-fonts
 ```
