@@ -2,6 +2,8 @@
 
 PONER TODOS LOS TITULOS EN READMES Y ADJUNTARLOS PARA QUE SE VEA MAS BONITO
 
+[RTFM](https://wiki.archlinux.org/title/Installation_guide)
+
 Config Files :D
 $USER == Usuario
 
