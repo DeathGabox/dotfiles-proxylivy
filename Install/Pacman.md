@@ -2,10 +2,10 @@
 [Repositorios](https://wiki.archlinux.org/title/Official_repositories)
 
 Optimizar Pacman
-```
-- Modificar /etc/pacman/conf
-- quitar "#" en ParallelDownload=5
-```
+
+- Modificar ``` /etc/pacman/conf ```
+- quitar "#" en ``` ParallelDownload=5 ```
+
 ---
 ```
 pacman -S sudo wget ranger htop bpytop kitty python-pygments atool elinks git ffmpegthumbnailer highlight libcaca lynx mediainfo bpytop code discord fish lxappearance-gtk3 libreoffice-fresh libreoffice-fresh-es micro nano mousepad mpv smplayer smplayer-skins smplayer-themes picard nomacs obsidian qt5ct lsd bat reflector rsync curl papirus-icon-theme gtk3 gtk4 firefox-developer-edition firefox-developer-edition-i18n-es-cl pulseaudio zip unzip tar p7zip unrar thunar gvfs tumbler thunar-volman thunar-archive-plugin obsidian discord font-manager gcolor3 cool-retro-term alsa alsa-utils alsa-firmware speedtest-cli picard python-dbus android-tools android-udev neovim emacs pkgfile telegram-desktop arandr ttf-jetbrains-mono ttf-hack-nerd neofetch catimg chafa nomacs xdotool qtile xorg-server xorg tldr inkscape emptty
