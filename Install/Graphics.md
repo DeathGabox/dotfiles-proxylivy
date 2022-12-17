@@ -2,7 +2,7 @@
 ## Geforce 940MX
 
 [AL NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
-
+[Help](https://nvidia.custhelp.com/app/answers/detail/a_id/137/~/linux---editing-your-x-config-file)
 Habilita el repositorio ```Multilib```
 
 Codename ``` NV118 (GM108) 	GeForce 830M, 840M, 930M, 940M[X] ```
