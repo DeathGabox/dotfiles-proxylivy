@@ -18,3 +18,4 @@ cd volantes-cursors
 make build
 sudo make install
 ```
+Configurar con lxappearance usuario y root
