@@ -157,3 +157,8 @@ localectl set-locale LANG=es_CL.utf8
 ```
 pacman -S asian-fonts
 ```
+
+- Fuentes
+```
+sudo pacman -S 
+```
