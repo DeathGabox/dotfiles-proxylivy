@@ -5,6 +5,15 @@ I USE https://github.com/catppuccin/qt5ct
 sudo su
 Edit /etc/environment & add the line QT_QPA_PLATFORMTHEME=qt5ct and save.
 ```
+Install
+```
+sudo su
+cd /home/deathgabox/Documentos/Git
+git clone https://github.com/catppuccin/qt5ct.git
+cd qt5ct
+cp Hola
+                HOla
+
 ---
 USER
 Configuration path: "/home/deathgabox/.config/qt5ct"
