@@ -1,8 +1,7 @@
 I USE https://github.com/catppuccin/qt5ct
 
 ### Tutorial
-``` sudo su```
-Edit ```/etc/environment``` & add the line ```QT_QPA_PLATFORMTHEME=qt5ct``` and save. After ```reboot```
+Edita con ```sudo micro /etc/environment``` & add the line ```QT_QPA_PLATFORMTHEME=qt5ct``` and save. After ```reboot```
 ```
 Install
 ```
