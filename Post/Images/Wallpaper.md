@@ -4,5 +4,12 @@ Recomiendan [Hacer esto](https://github.com/qtile/qtile/wiki/wallpapers)
 ---
 
 Mi configuracion
+dentro de ```Ruta```, Agregar:
 ```
-No se aun no me funciona nada
+screens = [
+    Screen(
+        wallpaper='$Ruta',
+        wallpaper_mode='fill',
+    )
+]
+```
