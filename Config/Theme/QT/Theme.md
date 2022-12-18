@@ -1,9 +1,9 @@
 I USE https://github.com/catppuccin/qt5ct
 
 ### Tutorial
-```
-sudo su
-Edit /etc/environment & add the line QT_QPA_PLATFORMTHEME=qt5ct and save.
+``` sudo su```
+Edit ```/etc/environment``` & add the line ```QT_QPA_PLATFORMTHEME=qt5ct``` and save.
+```reboot```
 ```
 Install
 ```
@@ -11,13 +11,13 @@ sudo su
 cd /home/deathgabox/Documentos/Git
 git clone https://github.com/catppuccin/qt5ct.git
 cd qt5ct
-cp
-
+cp Catppuccin-Mocha.conf /usr/share/qt5ct/colors/
+**Configure qt5ct user & root**
 ```
 
 Colors
 ```
-Catppuccin-Frappe.conf      (Light MMode)
+Catppuccin-Frappe.conf      (Light Mode)
 Catppuccin-Latte.conf       (Dark Mode)
 Catppuccin-Macchiato.conf   (Darker Mode)
 Catppuccin-Mocha.conf       (Darkest Mode)
