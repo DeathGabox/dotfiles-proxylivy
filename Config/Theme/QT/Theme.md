@@ -13,6 +13,8 @@ git clone https://github.com/catppuccin/qt5ct.git
 cd qt5ct
 cp
 
+```
+
 Colors
 ```
 Catppuccin-Frappe.conf      (Light MMode)
