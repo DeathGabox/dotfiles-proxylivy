@@ -11,8 +11,15 @@ sudo su
 cd /home/deathgabox/Documentos/Git
 git clone https://github.com/catppuccin/qt5ct.git
 cd qt5ct
-cp Hola
-                HOla
+cp
+
+Colors
+```
+Catppuccin-Frappe.conf      (Light MMode)
+Catppuccin-Latte.conf       (Dark Mode)
+Catppuccin-Macchiato.conf   (Darker Mode)
+Catppuccin-Mocha.conf       (Darkest Mode)
+```
 
 ---
 USER
