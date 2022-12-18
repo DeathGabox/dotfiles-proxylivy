@@ -1,5 +1,5 @@
 I use [Qtile](http://www.qtile.org/)
-Recomiendan [Hacer esto](xd)
+Recomiendan [Hacer esto](https://github.com/qtile/qtile/wiki/wallpapers)
 
 ---
 
