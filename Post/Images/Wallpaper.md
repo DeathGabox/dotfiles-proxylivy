@@ -4,12 +4,14 @@ Recomiendan [Hacer esto](https://github.com/qtile/qtile/wiki/wallpapers)
 ---
 
 Mi configuracion
-dentro de ```Ruta```, Agregar:
+Usar nitrogen
+Instalar
 ```
-screens = [
-    Screen(
-        wallpaper='$Ruta',
-        wallpaper_mode='fill',
-    )
-]
+pacman -S nitrogen
 ```
+Hacer un archivo de autoarranque
+``` micro ~/.config/qtile/autostart.sh``` y escribe ```nitrogen --restore &``` sal de editar, ejecuta ```chmod +x ~/.config/qtile/autostart.sh```
+
+Hacer que el archivo de autoarranque lo ejecute qtile
+
+
