@@ -155,10 +155,15 @@ localectl set-locale LANG=es_CL.utf8
 
 - Fuentes Asiaticas
 ```
-pacman -S asian-fonts
+pacman -S asian-fonts wqy-zenhei
 ```
 
 - Fuentes
 ```
-sudo pacman -S 
+pacman -S 
+```
+
+- Fuentes lib32
+```
+pacman -S lib32-fontconfig
 ```
