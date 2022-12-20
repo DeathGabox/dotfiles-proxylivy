@@ -1,3 +1,5 @@
+No funciona automaticamente pero ejecutando ```nitrogen --restore``` vuelve a estar el fondo de pantalla :((, algun dia funcionara
+
 I use [Qtile](http://www.qtile.org/)
 Recomiendan [Hacer esto](https://github.com/qtile/qtile/wiki/wallpapers)
 
