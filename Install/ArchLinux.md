@@ -100,6 +100,11 @@ exit
 reboot now
 ```
 
+- Configurar teclado en español
+```
+localectl set-x11-keymap es
+```
+
 - Activar Servicios
 ```
 sudo su
