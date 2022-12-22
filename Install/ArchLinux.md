@@ -167,3 +167,16 @@ pacman -S
 ```
 pacman -S lib32-fontconfig
 ```
+
+- Audio
+Instalar Dependencias
+```
+pacman -S pavucontrol 
+```
+
+Configurar Audio
+```
+set 
+amixer
+
+```
