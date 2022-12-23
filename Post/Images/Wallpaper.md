@@ -9,9 +9,19 @@ Usar nitrogen
 ```
 pacman -S nitrogen
 ```
-- [Autostart]()
-``` micro ~/.config/qtile/autostart.sh``` y escribe en la primera linea ```#!/bin/sh``` y en la segunda ```nitrogen --restore &``` sal de editar, ejecuta ```chmod +x ~/.config/qtile/autostart.sh```
+[Autostart]()
+```
+micro ~/.config/qtile/autostart.sh
 
+---
+
+#!/usr/bin/env bash
+nitrogen --restore
+
+---
+
+chmod +x ~/.config/qtile/autostart.sh
+```
 - Hacer que el archivo de autoarranque lo ejecute qtile
 Modifica ```~/.config/qtile/config.py```
 Y escribe
