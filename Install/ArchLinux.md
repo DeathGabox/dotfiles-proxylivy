@@ -160,7 +160,7 @@ localectl set-locale LANG=es_CL.utf8
 
 - Fuentes Asiaticas
 ```
-pacman -S asian-fonts wqy-zenhei
+pacman -S asian-fonts wqy-zenhei ttf-hanazono
 ```
 
 - Fuentes
@@ -171,6 +171,10 @@ pacman -S
 - Fuentes lib32
 ```
 pacman -S lib32-fontconfig
+```
+- Emojis
+```
+pacman -S ttf-joypixels
 ```
 
 - Audio
