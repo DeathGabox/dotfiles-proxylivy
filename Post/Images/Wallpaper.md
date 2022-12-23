@@ -9,7 +9,7 @@ Usar nitrogen
 ```
 pacman -S nitrogen
 ```
-[Autostart]()
+[Autostart](https://github.com/DeathGabox/Dotfiles/blob/main/Config/Qtile/autostart.sh)
 ```
 micro ~/.config/qtile/autostart.sh
 
@@ -28,7 +28,6 @@ Y escribe
 ```
 import os
 import subprocess
-
 from libqtile import hook
 
 @hook.subscribe.startup_once
