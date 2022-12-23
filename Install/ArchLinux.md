@@ -177,9 +177,3 @@ pacman -S lib32-fontconfig
 ```
 pacman -S ttf-joypixels
 ```
-
-- Audio
-Instalar Dependencias
-```
-pacman -S pavucontrol 
-```
