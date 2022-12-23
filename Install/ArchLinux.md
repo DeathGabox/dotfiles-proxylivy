@@ -145,6 +145,7 @@ pacman -Sy
 
 - Activar sonido
 ```
+pacman -S pavucontrol alsa alsa-utils alsa-firmware
 amixer sset Master unmute
 amixer sset Speaker unmute
 amixer sset Headphone unmute
@@ -160,12 +161,12 @@ localectl set-locale LANG=es_CL.utf8
 
 - Fuentes Asiaticas
 ```
-pacman -S asian-fonts wqy-zenhei ttf-hanazono
+pacman -S asian-fonts wqy-zenhei ttf-hanazono ttf-baekmuk
 ```
 
 - Fuentes
 ```
-pacman -S 
+pacman -S ttf-jetbrains-mono ttf-hack-nerd
 ```
 
 - Fuentes lib32
@@ -181,11 +182,4 @@ pacman -S ttf-joypixels
 Instalar Dependencias
 ```
 pacman -S pavucontrol 
-```
-
-Configurar Audio
-```
-set 
-amixer
-
 ```
