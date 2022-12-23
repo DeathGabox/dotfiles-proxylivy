@@ -1,5 +1,3 @@
-No funciona automaticamente pero ejecutando ```nitrogen --restore``` vuelve a estar el fondo de pantalla :((, algun dia funcionara
-
 I use [Qtile](http://www.qtile.org/)
 Recomiendan [Hacer esto](https://github.com/qtile/qtile/wiki/wallpapers)
 
@@ -11,7 +9,7 @@ Usar nitrogen
 ```
 pacman -S nitrogen
 ```
-- Hacer un archivo de autoarranque
+- [Autostart]()
 ``` micro ~/.config/qtile/autostart.sh``` y escribe en la primera linea ```#!/bin/sh``` y en la segunda ```nitrogen --restore &``` sal de editar, ejecuta ```chmod +x ~/.config/qtile/autostart.sh```
 
 - Hacer que el archivo de autoarranque lo ejecute qtile
