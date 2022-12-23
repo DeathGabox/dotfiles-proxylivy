@@ -166,7 +166,7 @@ pacman -S asian-fonts wqy-zenhei ttf-hanazono ttf-baekmuk
 
 - Fuentes
 ```
-pacman -S ttf-jetbrains-mono ttf-hack-nerd
+pacman -S ttf-jetbrains-mono ttf-hack-nerd cantarell ttf-dejavu
 ```
 
 - Fuentes lib32
