@@ -2,10 +2,16 @@
 
 Install ARCH LINUX
 
-- Testear la conectividad de internet
+> Testear la conectividad de internet
 ```
 ping -c 1 google.cl
 ``` 
+> Conectar wifi
+```
+nmcli r wifi on
+nmcli d wifi list
+nmcli d wifi "Your\ Hostname" password "Your\ Password"
+```
 
 - Cambiar layout a español
 ```
