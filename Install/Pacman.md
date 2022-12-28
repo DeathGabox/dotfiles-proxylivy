@@ -32,7 +32,7 @@ pacman -S --needed base-devel git
 
 Instalar Paquetes YAY
 ```
-yay -S deemix-gui-appimage lightscreen mkinitcpio-firmware emptty
+yay -S deemix-gui-appimage lightscreen mkinitcpio-firmware emptty clight clightd clight-gui-git 
 ```
 
 Acelerar Pacman con deflector (Elige solo 1)
