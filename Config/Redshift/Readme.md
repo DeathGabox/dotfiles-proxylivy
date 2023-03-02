@@ -15,6 +15,7 @@ exec /usr/bin/redshift -v
 > Crear redshift.service (User)
 
 Ruta: /home/$USER/.config/systemd/user/redshift.service
+
 NOTE: XAUTORITY se cambia segun el OUTPUT de `echo $XAUTHORITY`
 ```
 [Unit]
