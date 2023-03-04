@@ -2,7 +2,15 @@
 
 Install ARCH LINUX
 
-> Testear la conectividad de internet
+> Cambiar layout a español
+```
+loadkeys es
+```
+> Ethernet conecta automaticamente
+   <details open>
+   <summary><strong>Conecta a internet</strong></summary>
+  
+  > Testear la conectividad de internet
 ```
 ping -c 1 google.cl
 ``` 
@@ -12,12 +20,17 @@ nmcli r wifi on
 nmcli d wifi list
 nmcli d wifi "Your\ Hostname" password "Your\ Password"
 ```
+  
+  </details>
 
-- Cambiar layout a español
-```
-loadkeys es
-```
+   <br>
+  
 
+
+> Elige tu modo de bios entre UEFI o Legacy Bios
+   <details open>
+   <summary><strong>Legacy Bios (MBR)</strong></summary>
+  
 - Particiones
 ```
 cfdisk
@@ -27,7 +40,7 @@ cfdisk
   "Write" y salir
 ```
 
-- Revisar las particiones
+> Revisar las particiones
 ```
 lsblk
 ```
@@ -45,6 +58,50 @@ swapon
 mount /dev/sda2 /mnt
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
+```
+     
+  </details>
+
+   <br>
+   
+   <details open>
+   <summary><strong>UEFI BIOS (GPT)</strong></summary>
+
+  - Particiones
+```
+cfdisk
+  dev/sda1 512M/Primary/Linux
+  dev/sda2 dejando 4G/Primary/Linux
+  dev/sda3 4G/Primary/Linux Swap
+  "Write" y salir
+```
+
+> Revisar las particiones
+```
+lsblk
+```
+
+- Crear Sistema de ficheros
+```
+mkfs.vfat -F 32 /dev/sda1
+mkfs.ext4 /dev/sda2
+mkswap /dev/sda3
+swapon
+```
+
+- Montar particiones e instalar paquetes
+```
+mount /dev/sda2 /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+```
+  
+   </details>
+
+   <br>
+   
+> instalar paquetes con pacstrap
+```
 pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel
 ```
 
