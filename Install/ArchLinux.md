@@ -1,15 +1,26 @@
 [Inicio](https://github.com/DeathGabox/Dotfiles#dotfiles)
 
-Install ARCH LINUX
+# Install ARCH LINUX
+
+<details>
+<summary><b>No se deberia de abrir</b></summary>
+<br>
+
+Se hable esto???
+
+
+</details>
+
 
 > Cambiar layout a español
 ```
 loadkeys es
 ```
 > Ethernet conecta automaticamente
-   <details open>
-   <summary><strong>Conecta a internet</strong></summary>
-  
+   <details>
+   <summary><b>Conecta a internet</b></summary>
+   <br>
+   
   > Testear la conectividad de internet
 ```
 ping -c 1 google.cl
@@ -22,14 +33,12 @@ nmcli d wifi "Your\ Hostname" password "Your\ Password"
 ```
   
   </details>
-
-   <br>
   
-
-
 > Elige tu modo de bios entre UEFI o Legacy Bios
-   <details open>
-   <summary><strong>Legacy Bios (MBR)</strong></summary>
+
+   <details>
+   <summary><b>Legacy Bios (MBR)</b></summary>
+   <br>
   
 - Particiones
 ```
@@ -61,12 +70,11 @@ mount /dev/sda1 /mnt/boot
 ```
      
   </details>
-
+   
+   <details>
+   <summary><b>UEFI BIOS (GPT)</b></summary>
    <br>
    
-   <details open>
-   <summary><strong>UEFI BIOS (GPT)</strong></summary>
-
   - Particiones
 ```
 cfdisk
@@ -97,8 +105,6 @@ mount /dev/sda1 /mnt/boot
 ```
   
    </details>
-
-   <br>
    
 > instalar paquetes con pacstrap
 ```
