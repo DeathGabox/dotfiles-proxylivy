@@ -1,16 +1,6 @@
 [Inicio](https://github.com/DeathGabox/Dotfiles#dotfiles)
 
-# Install ARCH LINUX
-
-<details>
-<summary><b>No se deberia de abrir</b></summary>
-<br>
-
-Se hable esto???
-
-
-</details>
-
+**Install ARCH LINUX**
 
 > Cambiar layout a español
 ```
@@ -72,7 +62,7 @@ mount /dev/sda1 /mnt/boot
   </details>
    
    <details>
-   <summary><b>UEFI BIOS (GPT)</b></summary>
+   <summary><b>UEFI BIOS(GPT)</b></summary>
    <br>
    
   - Particiones
@@ -103,8 +93,7 @@ mount /dev/sda2 /mnt
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 ```
-  
-   </details>
+  </details>
    
 > instalar paquetes con pacstrap
 ```
