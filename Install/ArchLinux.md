@@ -23,6 +23,8 @@ nmcli d wifi "Your\ Hostname" password "Your\ Password"
 ```
   
   </details>
+ 
+--- 
   
 > Elige tu modo de bios entre UEFI o Legacy Bios
 
@@ -95,6 +97,7 @@ mount /dev/sda1 /mnt/boot
 ```
   </details>
    
+---   
 > instalar paquetes con pacstrap
 ```
 pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel
@@ -105,6 +108,11 @@ pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 ```
+
+   <details>
+   <summary><b>chroot</b></summary>
+   <br>
+
 
 - Crear Usuarios
 ```
@@ -155,6 +163,13 @@ nano /etc/hosts
 pacman -S neofetch
 neofetch
 exit
+```
+
+   </details>
+   
+---
+> Reboot
+```
 reboot now
 ```
 
@@ -217,21 +232,27 @@ timedatectl set-timezone America/Santiago
 localectl set-locale LANG=es_CL.utf8
 ```
 
-- Fuentes Asiaticas
+
+   <details>
+   <summary><b>Fuentes adicionales</b></summary>
+   <br>
+   
+> Fuentes Asiaticas
 ```
 pacman -S asian-fonts wqy-zenhei ttf-hanazono ttf-baekmuk
 ```
 
-- Fuentes
+> Fuentes
 ```
 pacman -S ttf-jetbrains-mono ttf-hack-nerd cantarell ttf-dejavu
 ```
 
-- Fuentes lib32
+> Fuentes lib32
 ```
 pacman -S lib32-fontconfig
 ```
-- Emojis
+> Emojis
 ```
 pacman -S ttf-joypixels
 ```
+</details>
