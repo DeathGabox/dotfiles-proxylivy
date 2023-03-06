@@ -130,7 +130,7 @@ passwd $USER
 ```
 pacman -Sy sudo nano
 nano /etc/sudoers
-  descomentar wheel ALL=(ALL:ALL) ALL
+  descomentar %wheel ALL=(ALL:ALL) ALL
 ```
 
 > Configurar idiomas
