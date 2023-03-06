@@ -32,7 +32,7 @@ Aqui iria todo para que funcione, desde initcpio y lo demas
 ## Intel
 Install
 ```
-sudo pacman -S intel-gmmlib intel-media-driver intel-ucode libmfx libva-intel-driver libva-utils
+sudo pacman -S intel-gmmlib intel-media-driver intel-ucode libmfx libva-intel-driver libva-utils xf86-video-intel
 ```
 Dependencias Lib32
 ```
