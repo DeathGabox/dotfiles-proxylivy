@@ -1,6 +1,6 @@
 # NVIDIA 
 ## Geforce 940MX
-
+[Gracias](Lista de Links :P)
 [AL NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
 
 [Help](https://nvidia.custhelp.com/app/answers/detail/a_id/137/~/linux---editing-your-x-config-file)
@@ -23,6 +23,9 @@ sudo pacman -S lib32-libvdpau lib32-nvidia-utils lib32-opencl-nvidia
 sudo pacman -S egl-wayland gwe libxnvctrl mhwd-nvidia nvidia-dkms nvidia-prime nvidia-settings nvtop mhwd
 ```
 ## Nvidia Config
+
+Aqui iria todo para que funcione, desde initcpio y lo demas
+
 
 ---
 
