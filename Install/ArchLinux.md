@@ -1,5 +1,6 @@
-[Inicio](https://github.com/DeathGabox/Dotfiles#dotfiles)
-[Thankyou](https://github.com/DeathGabox/Dotfiles/blob/main/.github/THANKYOU.md#Install)
+[Inicio](/.github/README.md)
+
+[Thankyou](/.github/THANKYOU.md#Install)
 
 **Install ARCH LINUX**
 
