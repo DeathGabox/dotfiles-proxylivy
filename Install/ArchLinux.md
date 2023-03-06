@@ -96,18 +96,16 @@ mount /dev/sda2 /mnt
 mkdir /mnt/efi
 mount /dev/sda1 /mnt/efi
 ```
+   </details>
+   
 ---
    
 > instalar paquetes con pacstrap
+>
 > NOTE: en sistemas UEFI, instalar efibootmgr os-probes ntfs-3g
 ```
-pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel 
+pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-synaptics fish bat micro 
 ```
-   
-> Instalar programas al pacstrap
-```
-pacstrap /mnt gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-synaptics fish bat micro 
-```   
    
 - Crear Fstab
 ```
