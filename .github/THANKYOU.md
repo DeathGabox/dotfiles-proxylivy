@@ -14,5 +14,5 @@ Todas las personas que hicieron posible mi conocimiento, este dotfiles, inspirac
 
 
 
-# Install
+###### Install
 [Arch linux Installation Guide(The Manual)](https://wiki.archlinux.org/title/Installation_guide)
