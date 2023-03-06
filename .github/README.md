@@ -5,6 +5,7 @@
 ### Arch Linux
 
 [Install Arch By Me UwU](/Install/ArchLinux.md)
+
 ---
 
 ### Pacman/YAY
