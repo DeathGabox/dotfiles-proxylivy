@@ -1,5 +1,5 @@
 [Inicio](https://github.com/DeathGabox/Dotfiles#dotfiles)
-
+   
 **Install ARCH LINUX**
 
 > Cambiar layout a español
@@ -27,6 +27,7 @@ nmcli d wifi "Your\ Hostname" password "Your\ Password"
 --- 
   
 > Elige tu modo de bios entre UEFI o Legacy Bios
+> Test `ls /sys/firmware/efi/efivar`, si sale `no such file or directory` eligue Legacy BIOS, si salen varios archivos, Elige UEFI
 
    <details>
    <summary><b>Legacy Bios (MBR)</b></summary>
@@ -70,8 +71,8 @@ mount /dev/sda1 /mnt/boot
   - Particiones
 ```
 cfdisk
-  dev/sda1 512M/Primary/Linux
-  dev/sda2 dejando 4G/Primary/Linux
+  dev/sda1 512M/EFI System
+  dev/sda2 dejando 4G/Linux x86_64 root
   dev/sda3 4G/Primary/Linux Swap
   "Write" y salir
 ```
@@ -92,17 +93,22 @@ swapon
 - Montar particiones e instalar paquetes
 ```
 mount /dev/sda2 /mnt
-mkdir /mnt/boot
-mount /dev/sda1 /mnt/boot
+mkdir /mnt/efi
+mount /dev/sda1 /mnt/efi
 ```
-  </details>
+---
    
----   
 > instalar paquetes con pacstrap
+> NOTE: en sistemas UEFI, instalar efibootmgr os-probes ntfs-3g
 ```
-pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel
+pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel 
 ```
-
+   
+> Instalar programas al pacstrap
+```
+pacstrap /mnt gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-synaptics fish bat micro 
+```   
+   
 - Crear Fstab
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -151,6 +157,12 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+- Montar Bootloader UEFI
+```
+grub-install --efi-directory=/boot/efi --bootloader-id='Arch Linux' --target=x86_64-efi
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+      
 - Hostname
 ```
 echo $HOSTNAME > /etc/hostname
@@ -191,7 +203,7 @@ ping -c 1 google.cl
 
 - Instalar Paquetes
 ```
-pacman -S xorg xorg-server qtile kitty 
+pacman -S xorg xorg-server qtile
 ```
 
 - Instalar Git, yay, Blackarch, emptty
