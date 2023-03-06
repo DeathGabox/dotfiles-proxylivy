@@ -4,7 +4,7 @@
 ## Install
 
 ### Arch Linux
-[Install Arch By Me UwU](https://github.com/DeathGabox/Dotfiles/blob/main/Install/ArchLinux.md)
+[Install Arch By Me UwU](/Install/ArchLinux.md)
 ---
 
 ### Pacman/YAY
