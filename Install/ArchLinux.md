@@ -9,11 +9,11 @@
 loadkeys es
 ```
 > NOTE: Ethernet conecta automaticamente
-   <details>
+
+<details>
    <summary><b>Conecta a internet</b></summary>
-   <br>
-   
-  > Testear la conectividad de internet
+
+> Testear la conectividad de internet
 ```
 ping -c 1 google.cl
 ``` 
@@ -24,18 +24,17 @@ nmcli d wifi list
 nmcli d wifi "Your\ Hostname" password "Your\ Password"
 ```
   
-  </details>
- 
+</details>
+
 --- 
   
 > Elige tu modo de bios entre UEFI o Legacy Bios
 > 
 > `ls /sys/firmware/efi/efivar`, si sale `no such file or directory` eligue Legacy BIOS, si salen varios archivos, Elige UEFI
 
-   <details>
+<details>
    <summary><b>Legacy Bios (MBR)</b></summary>
-   <br>
-  
+   
 > Particiones
 ```
 cfdisk
@@ -64,12 +63,11 @@ mount /dev/sda2 /mnt
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 ```
-     
-  </details>
+
+</details>
    
-   <details>
+<details>
    <summary><b>UEFI BIOS(GPT)</b></summary>
-   <br>
    
 > Particiones
 ```
@@ -99,7 +97,8 @@ mount /dev/sda2 /mnt
 mkdir /mnt/efi
 mount /dev/sda1 /mnt/efi
 ```
-   </details>
+   
+</details>
    
 ---
    
@@ -107,7 +106,7 @@ mount /dev/sda1 /mnt/efi
 >
 > NOTE: en sistemas UEFI, instalar efibootmgr os-probes ntfs-3g
 ```
-pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-synaptics fish bat micro 
+pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-synaptics fish bat micro
 ```
    
 > Crear Fstab
@@ -116,18 +115,15 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 ```
 
-   <details>
+<details>
    <summary><b>chroot</b></summary>
-   <br>
-
 
 > Crear Usuarios
 ```
 arch-chroot /mnt
 passwd
-useradd -m $USER
+useradd -m $USER -G audio,lp,optical,storage,video,wheel,games,power,scanner
 passwd $USER
-usermod -aG wheel $USER
 ```
 
 > Sudo Config
@@ -152,7 +148,13 @@ nano /etc/vconsole.conf
   KEYMAP=es
 ```
 
-> Montar Bootloader
+---
+
+> NOTA: RECUERDA SOLO MONTAR EL BOOTLOADER DEPENDIENDO DE LA CONFIGURACION DE BIOS
+
+---
+
+> Montar Bootloader LEGACY BIOS
 ```
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -160,7 +162,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 > Montar Bootloader UEFI
 ```
-grub-install --efi-directory=/boot/efi --bootloader-id='Arch Linux' --target=x86_64-efi
+grub-install --efi-directory=/efi --bootloader-id='Arch Linux' --target=x86_64-efi
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
       
@@ -178,9 +180,17 @@ neofetch
 exit
 ```
 
-   </details>
+</details>
    
 ---
+
+> Desmontar Particiones
+```
+umount -R /mnt
+```
+
+---
+
 > Reboot
 ```
 reboot now
