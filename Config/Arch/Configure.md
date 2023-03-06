@@ -17,7 +17,7 @@ ping -c 1 google.cl
 
 - Instalar WM
 ```
-pacman -S xorg xorg-server qtile git
+pacman -S xorg xorg-server xorg-xinit qtile git
 ```
 
 - Instalar yay (Gestor AUR)
