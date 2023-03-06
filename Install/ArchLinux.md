@@ -27,7 +27,8 @@ nmcli d wifi "Your\ Hostname" password "Your\ Password"
 --- 
   
 > Elige tu modo de bios entre UEFI o Legacy Bios
-> Test `ls /sys/firmware/efi/efivar`, si sale `no such file or directory` eligue Legacy BIOS, si salen varios archivos, Elige UEFI
+> 
+> `ls /sys/firmware/efi/efivar`, si sale `no such file or directory` eligue Legacy BIOS, si salen varios archivos, Elige UEFI
 
    <details>
    <summary><b>Legacy Bios (MBR)</b></summary>
