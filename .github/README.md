@@ -1,5 +1,7 @@
 # Dotfiles
 
+[![GitHub license](https://img.shields.io/github/license/DeathGabox/Dotfiles.svg)](https://github.com/DeathGabox/blob/main/LICENSE)
+
 ## Install
 
 ### Arch Linux
