@@ -8,17 +8,17 @@ https://ohmyposh.dev/
 https://ohmyposh.dev/docs/installation/customize
 
 ## Obtener Winget
-´´´
+```
 https://github.com/microsoft/winget-cli/releases
   Descargar .mixbundle
-´´´
+```
 
 ## Configuracion Previa
-´´´
+```
 Set-ExecutionPolicy Unrestricted
 winget install --id Microsoft.Powershell --source winget
 winget upgrade
-´´´
+```
 
 ---
 
@@ -31,29 +31,29 @@ winget install zyedidia.micro
 ```
 
 ## Install Winfetch
-´´´
+```
 Install-Script -Name pwshfetch-test-1
 Set-Alias winfetch pwshfetch-test-1
-´´´
+```
 
 ---
 
 > Descargar las fuentes de Hack nerd font
-´´´
+```
 cd C:\Users\Alumno\Downloads
 https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.2/Hack.zip
 Expand-Archive -Path ".\Hack.zip"
-´´´
+```
 
 ---
 
 ## Install Oh-my-posh
-´´´
+```
 winget install JanDeDobbeleer.OhMyPosh
 notepad $PROFILE
   oh-my-posh --init --shell pwsh --config ~/AppData/Local/Programs/oh-my-posh/themes/jandedobbeleer.omp.json | Invoke-Expression
 Refresh terminal
-´´´
+```
 
 
 https://github.com/PowerShell/PSReadLine
