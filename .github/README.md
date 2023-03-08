@@ -13,7 +13,7 @@ winget upgrade
 ---
 
 ## WINGET
-
+winget install rclone 
 
 ## Install Winfetch
 Install-Script -Name pwshfetch-test-1
@@ -46,6 +46,14 @@ winget install JanDeDobbeleer.OhMyPosh
 notepad $PROFILE
   oh-my-posh --init --shell pwsh --config ~/AppData/Local/Programs/oh-my-posh/themes/jandedobbeleer.omp.json | Invoke-Expression
 Refhesh terminal
+
+
+
+https://github.com/PowerShell/PSReadLine
+https://github.com/AnderssonPeter/PowerType
+
+https://ohmyposh.dev/docs/installation/windows
+https://rclone.org/onedrive/
 
 ### Pacman/YAY
 
