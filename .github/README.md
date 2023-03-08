@@ -1,5 +1,7 @@
 # Dotfiles
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/DeathGabox/DotFiles/main?color=blueviolet&label=Commit&logo=github&logoColor=black&style=for-the-badge)
+
+
 https://ohmyposh.dev/
 
 ## THANKSYOU
@@ -13,7 +15,12 @@ winget upgrade
 ---
 
 ## WINGET
+```
 winget install rclone 
+winget install Mozilla.Firefox
+winget install --id Microsoft.WindowsTerminal -e
+winget install zyedidia.micro
+```
 
 ## Install Winfetch
 Install-Script -Name pwshfetch-test-1
@@ -25,16 +32,6 @@ Set-Alias winfetch pwshfetch-test-1
 cd C:\Users\Alumno\Downloads
 https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.2/Hack.zip
 Expand-Archive -Path ".\Hack.zip"
-
----
-
-## Install
-
-Windows Install UwU (Wip)
-Usar WInGet
-winget install Mozilla.Firefox
-winget install --id Microsoft.WindowsTerminal -e
-winget install zyedidia.micro
 
 ---
 Instalar fuentes
