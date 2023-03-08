@@ -1,17 +1,19 @@
 # Dotfiles
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/DeathGabox/DotFiles/main?color=blueviolet&label=Commit&logo=github&logoColor=black&style=for-the-badge)
 
-
-https://ohmyposh.dev/
-
-## THANKSYOU
-https://ohmyposh.dev/docs/installation/customize
-
 ## Obtener Winget
 
 [Winget Github Release](https://github.com/microsoft/winget-cli/releases/latest)
- 
 
+---
+
+## Descargar e Instalar Fuentes
+
+[Nerd Fonts Github](https://github.com/ryanoasis/nerd-fonts/releases/latest)
+
+NOTE: Preferir Fuente Hack e Instalar "Regular Windows Complete" y "Regular Mono Windows Complete"
+
+---
 
 ## Configuracion Previa
 ```
@@ -29,16 +31,9 @@ winget install zyedidia.micro
 ## Install Oh-my-posh
 ```
 winget install JanDeDobbeleer.OhMyPosh -s winget
+New-Item -Path $PROFILE -Type File -Force
 notepad $PROFILE
   oh-my-posh --init --shell pwsh --config ~/AppData/Local/Programs/oh-my-posh/themes/jandedobbeleer.omp.json | Invoke-Expression
-exit
-```
-
-## Descargar e Instalar Fuentes
-```
-https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf
-https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Windows%20Compatible.ttf
-NOTE: Instalar para todos los usuarios y reiniciar la terminal
 ```
 
 ## Actualizar Paquetes
@@ -64,13 +59,11 @@ https://rclone.org/onedrive/
 
 ##### TEST
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
+Install-Module PowerShellGet -AllowClobber -Force
 
-winget install JanDeDobbeleer.OhMyPosh -s winget
-notepad $PROFILE
-oh-my-posh --init --shell pwsh --config ~/AppData/Local/Programs/oh-my-posh/themes/jandedobbeleer.omp.json | Invoke-Expression
-oh-my-posh font install
-
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
 
 > NOTA 06-03-2023
