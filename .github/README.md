@@ -8,31 +8,20 @@ https://ohmyposh.dev/
 https://ohmyposh.dev/docs/installation/customize
 
 ## Obtener Winget
-```
-https://github.com/microsoft/winget-cli/releases
-  Descargar .mixbundle
-```
+
+[Winget Github Release](https://github.com/microsoft/winget-cli/releases/latest)
+ 
+
 
 ## Configuracion Previa
 ```
 Set-ExecutionPolicy Unrestricted
+winget install --id Microsoft.VCRedist.2015+.x64
 winget install --id Microsoft.Powershell --source winget
 winget install --id Microsoft.WindowsTerminal -e
-```
-
----
-
-## WINGET
-```
 winget install rclone 
 winget install Mozilla.Firefox
 winget install zyedidia.micro
-```
-
-## Install Winfetch (Test with Export-Alias)
-```
-Install-Script -Name pwshfetch-test-1
-Set-Alias winfetch pwshfetch-test-1
 ```
 
 ---
@@ -58,6 +47,11 @@ winget update
 winget upgrade --all
 ```
 
+## Install Winfetch (Test with Export-Alias)
+```
+Install-Script -Name pwshfetch-test-1
+Set-Alias winfetch pwshfetch-test-1
+```
 
 ---
 
