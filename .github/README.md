@@ -33,19 +33,19 @@ winget install zyedidia.micro
 winget install JanDeDobbeleer.OhMyPosh -s winget
 New-Item -Path $PROFILE -Type File -Force
 notepad $PROFILE
+  Set-Alias winfetch pwshfetch-test-1
   oh-my-posh --init --shell pwsh --config ~/AppData/Local/Programs/oh-my-posh/themes/jandedobbeleer.omp.json | Invoke-Expression
+```
+
+## Install Winfetch (Test with Export-Alias)
+```
+Install-Script -Name pwshfetch-test-1
 ```
 
 ## Actualizar Paquetes
 ```
 winget update
 winget upgrade --all
-```
-
-## Install Winfetch (Test with Export-Alias)
-```
-Install-Script -Name pwshfetch-test-1
-Set-Alias winfetch pwshfetch-test-1
 ```
 
 ---
