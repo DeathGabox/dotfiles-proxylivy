@@ -37,7 +37,7 @@ notepad $PROFILE
   oh-my-posh --init --shell pwsh --config ~/AppData/Local/Programs/oh-my-posh/themes/jandedobbeleer.omp.json | Invoke-Expression
 ```
 
-## Install Winfetch (Test with Export-Alias)
+## Install Winfetch
 ```
 Install-Script -Name pwshfetch-test-1
 ```
@@ -47,12 +47,3 @@ Install-Script -Name pwshfetch-test-1
 winget update
 winget upgrade --all
 ```
-
----
-
-https://ohmyposh.dev/docs/installation/windows
-https://rclone.org/onedrive/
-
-> NOTA 06-03-2023
-
-Bueno, cualquier cosa sobre el funcionamiento de arch, queda la [documentacion oficial](https://wiki.archlinux.org/), cualquier transpaso hacia este repositorio haria quedar desfasado y ser una vulnerabilidad, por lo que hare una limpieza y redireccion a la wiki con todo lo que pueda :p
