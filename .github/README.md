@@ -50,21 +50,8 @@ winget upgrade --all
 
 ---
 
-https://github.com/PowerShell/PSReadLine
-https://github.com/AnderssonPeter/PowerType
-
 https://ohmyposh.dev/docs/installation/windows
 https://rclone.org/onedrive/
-
-
-##### TEST
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
-
-Install-Module PowerShellGet -AllowClobber -Force
-
-Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-
 
 > NOTA 06-03-2023
 
