@@ -161,7 +161,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 > Montar Bootloader UEFI
 ```
-grub-install --efi-directory=esp --bootloader-id='Arch Linux' --target=x86_64-efi --removable
+grub-install --efi-directory=esp --bootloader-id=GRUB --target=x86_64-efi --removable
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
       
