@@ -108,7 +108,7 @@ Optimizar Pacman
 ---
 Instalar Paquetes Principales que uso
 ```
-pacman -S sudo wget ranger htop bpytop kitty python-pygments atool elinks git ffmpegthumbnailer highlight libcaca lynx mediainfo bpytop code discord fish lxappearance-gtk3 libreoffice-fresh libreoffice-fresh-es micro nano mousepad mpv smplayer smplayer-skins smplayer-themes picard nomacs obsidian qt5ct lsd bat reflector rsync curl papirus-icon-theme gtk3 gtk4 firefox-developer-edition firefox-developer-edition-i18n-es-cl pulseaudio zip unzip tar p7zip unrar thunar gvfs tumbler thunar-volman thunar-archive-plugin obsidian font-manager gcolor3 cool-retro-term speedtest-cli python-dbus android-tools android-udev neovim emacs pkgfile telegram-desktop arandr neofetch catimg chafa nomacs xdotool qtile tldr inkscape dolphin-emu dunst mangohud picom
+pacman -S sudo wget ranger htop bpytop kitty python-pygments atool elinks git ffmpegthumbnailer highlight libcaca lynx mediainfo bpytop code discord fish lxappearance-gtk3 libreoffice-fresh libreoffice-fresh-es micro nano mousepad mpv smplayer smplayer-skins smplayer-themes picard nomacs obsidian qt5ct lsd bat reflector rsync curl papirus-icon-theme gtk3 gtk4 firefox-developer-edition firefox-developer-edition-i18n-es-cl pulseaudio zip unzip tar p7zip unrar thunar gvfs tumbler thunar-volman thunar-archive-plugin obsidian font-manager gcolor3 cool-retro-term speedtest-cli python-dbus android-tools android-udev neovim emacs pkgfile telegram-desktop arandr neofetch catimg chafa nomacs xdotool qtile tldr inkscape dolphin-emu dunst picom
 ```
 
 Instalar Grupos de paquetes
@@ -119,7 +119,7 @@ pacman -S xorg xorg-server xorg-apps xorg-drivers
 
 Instalar Paquetes YAY
 ```
-yay -S lightscreen mkinitcpio-firmware emptty fastfetch
+yay -S lightscreen mkinitcpio-firmware emptty fastfetch mangohud
 ```
 
 Acelerar Pacman con deflector (Elige solo 1)
