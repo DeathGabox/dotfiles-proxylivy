@@ -4,8 +4,8 @@ yay -S redshift-minimal
 
 > Crear script de ejecucion
 ```
-mkdir -p /home/$USER/.bin/
-micro /home/$USER/.bin/redshift_autostart
+mkdir -p /home/$USER/.local/bin/
+micro /home/$USER/.local/bin/redshift_autostart
 
 #!bin/bash
 sleep 8
