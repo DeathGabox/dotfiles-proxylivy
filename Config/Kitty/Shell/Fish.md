@@ -2,7 +2,15 @@ Instalar
 ```
 pacman -S fish fisher
 ```
+
+execute `fish`
+
 Fish Plug-In [Fisher](https://github.com/jorgebucaran/fisher)
+> install fisher
+```
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+```
+
 ```
 fisher install IlanCosman/tide@v5
 **Hazlo tambien como root**(Son diferentes configuraciones)
