@@ -17,7 +17,7 @@ fisher install IlanCosman/tide@v5
 ```
 **Hazlo tambien como root**(Son diferentes configuraciones)
 
-Install [Done]
+Install [Done](https://github.com/franciscolourenco/done)
 ```
 fisher install franciscolourenco/done
 ```
