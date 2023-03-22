@@ -37,7 +37,7 @@ nmcli d wifi "Your\ Hostname" password "Your\ Password"
    
 > Particiones
 ```
-cfdisk
+cfdisk dev/sdx // (nvmexnx)
   dev/sda1 512M/Primary/Linux
   dev/sda2 dejando 4G/Primary/Linux
   dev/sda3 4G/Primary/Linux Swap
@@ -104,7 +104,7 @@ mount /dev/sda1 /mnt/efi
    
 > instalar paquetes con pacstrap
 >
-> NOTE: en sistemas UEFI, instalar efibootmgr os-probes ntfs-3g
+> NOTE: en sistemas UEFI, instalar **efibootmgr os-probes ntfs-3g**
 ```
 pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-synaptics fish bat micro
 ```
@@ -122,7 +122,7 @@ cat /mnt/etc/fstab
 ```
 arch-chroot /mnt
 passwd
-useradd -m $USER -G audio,lp,optical,storage,video,wheel,games,power,scanner
+useradd -m $USER -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/fish
 passwd $USER
 ```
 
@@ -155,15 +155,17 @@ nano /etc/vconsole.conf
 
 > Montar Bootloader LEGACY BIOS
 ```
-grub-install /dev/sda
+grub-install /dev/sdx // (nvmexnxpx)
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 > Montar Bootloader UEFI
 ```
-grub-install --efi-directory=esp --bootloader-id=GRUB --target=x86_64-efi --removable
+grub-install --efi-directory=/boot --bootloader-id=grub --target=x86_64-efi --removable
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
+Nota: --efi-directory=/boot/efi podrias probar
+   
       
 > Hostname
 ```
