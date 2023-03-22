@@ -1,14 +1,14 @@
 I USE https://github.com/catppuccin/qt5ct
 
 ### Tutorial
-Edita con ```sudo micro /etc/environment``` & add the line ```QT_QPA_PLATFORMTHEME=qt5ct``` and save. After ```reboot```
+Edita con `sudo micro /etc/environment` & add the line `QT_QPA_PLATFORMTHEME=qt5ct` and save. After `reboot`
 
 Install
 ```
 sudo su
 cd /home/deathgabox/Documentos/Git
 git clone https://github.com/catppuccin/qt5ct.git
-cd qt5ct
+cd qt5ct/themes/
 mkdir -p ~/.config/qt5ct/colors/
 cp Catppuccin-Mocha.conf /usr/share/qt5ct/colors/
 cp Catppuccin-Mocha.conf ~/.config/qt5ct/colors/
