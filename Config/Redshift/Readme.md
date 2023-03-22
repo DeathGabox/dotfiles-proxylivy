@@ -12,6 +12,10 @@ sleep 8
 exec /usr/bin/redshift -v
 ```
 
+```
+chmod +x redshift_autostart
+```
+
 > Crear redshift.service (User)
 
 Ruta: `/home/$USER/.config/systemd/user/redshift.service`
@@ -24,7 +28,7 @@ Documentation=http://jonls.dk/redshift/
 
 [Service]
 Environment="DISPLAY=:0" "XAUTHORITY=/run/user/1000/.emptty-xauth"
-ExecStart=/home/deathgabox/.local/bin/start_redshift
+ExecStart=sh /home/deathgabox/.local/bin/redshift_autostart
 RestartSec=15
 
 [Install]
@@ -103,4 +107,10 @@ lon=-70.9
 ; If this option is not specified, Redshift will try to adjust _all_ screens.
 [randr]
 screen=0
+```
+
+activar el modulo
+```
+systemctl --user daemon-reload
+systemctl --user enable redshift.service
 ```
