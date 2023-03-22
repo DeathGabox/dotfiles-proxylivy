@@ -14,7 +14,7 @@ exec /usr/bin/redshift -v
 
 > Crear redshift.service (User)
 
-Ruta: /home/$USER/.config/systemd/user/redshift.service
+Ruta: `/home/$USER/.config/systemd/user/redshift.service`
 
 NOTE: XAUTORITY se cambia segun el OUTPUT de `echo $XAUTHORITY`
 ```
@@ -24,14 +24,14 @@ Documentation=http://jonls.dk/redshift/
 
 [Service]
 Environment="DISPLAY=:0" "XAUTHORITY=/run/user/1000/.emptty-xauth"
-ExecStart=/home/deathgabox/.bin/start_redshift
+ExecStart=/home/deathgabox/.local/bin/start_redshift
 RestartSec=15
 
 [Install]
 WantedBy=default.target
 ```
 > Crea un config file
-RUTA: /home/$USER/.config/redshift/redshift.conf
+RUTA: `/home/$USER/.config/redshift/redshift.conf`
 ```
 ; Global settings for redshift
 [redshift]
