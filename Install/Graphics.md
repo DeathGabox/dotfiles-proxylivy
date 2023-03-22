@@ -23,9 +23,11 @@ sudo pacman -S lib32-libvdpau lib32-nvidia-utils lib32-opencl-nvidia
 sudo pacman -S nvidia-prime nvtop nvidia-settings
 ```
 ## Nvidia Config
-
-Aqui iria todo para que funcione, desde initcpio y lo demas
-
+```
+sudo micro /etc/mkinitcpio.conf
+  remove "kms" from "HOOKS"
+sudo mkinitcpio -p linux
+```
 
 ---
 
