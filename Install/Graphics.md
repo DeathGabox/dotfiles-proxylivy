@@ -20,7 +20,7 @@ sudo pacman -S lib32-libvdpau lib32-nvidia-utils lib32-opencl-nvidia
 
 - Instalar apoyo
 ```
-sudo pacman -S egl-wayland gwe libxnvctrl mhwd-nvidia nvidia-dkms nvidia-prime nvidia-settings nvtop mhwd
+sudo pacman -S nvidia-prime nvtop nvidia-settings
 ```
 ## Nvidia Config
 
