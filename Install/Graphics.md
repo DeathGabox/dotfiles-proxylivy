@@ -53,3 +53,7 @@ Dependencias Lib32
 lib32-vulkan-intel lib32-glu lib32-libva-mesa-driver lib32-mesa lib32-mesa-demos lib32-mesa-vdpau lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-icd-loader 
 ```
 
+Extras:
+[EnvyControl](https://github.com/bayasdev/envycontrol)
+
+[Configuracion](https://wiki.denshi.org/hypha/client/nvidia)
