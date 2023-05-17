@@ -116,6 +116,12 @@ Instalar Grupos de paquetes
 pacman -S xorg xorg-server xorg-apps xorg-drivers 
 ```
 
+O 
+```
+pacman -Qqe > pkglist.txt
+pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
+```
+
 
 Instalar Paquetes YAY
 ```
