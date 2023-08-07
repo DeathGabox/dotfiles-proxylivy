@@ -1,9 +1,10 @@
 > TTY
 ```
+## STOP THEY CHANGED ##
 cd /home/$USER/Documentos/git
-https://github.com/catppuccin/tty.git && cd grub
-./build.sh
-./install.sh macchiato
+https://github.com/catppuccin/tty.git && cd tty
+chmod a+x *.sh
+./generate.sh macchiato
 reboot
 ```
 
