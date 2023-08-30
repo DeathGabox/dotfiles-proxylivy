@@ -123,7 +123,7 @@ cat /mnt/etc/fstab
 ```
 arch-chroot /mnt
 passwd
-useradd -m $USER -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/fish
+useradd -m $USER -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/fish
 passwd $USER
 ```
 
