@@ -171,7 +171,10 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 > Montar Bootloader UEFI
 ```
-grub-install --efi-directory=/boot --bootloader-id=grub --target=x86_64-efi --removable
+mkdir /boot/EFI
+mount /dev/device1 -t vfat /boot/efi
+
+grub-install --bootloader-id=grub --target=x86_64-efi --removable --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 Nota: --efi-directory=/boot/efi podrias probar
@@ -183,9 +186,6 @@ echo $HOSTNAME > /etc/hostname
 nano /etc/hosts
   Agregar la linea 127.0.0.1    $HOSTNAME.localhost $HOSTNAME
 ```
-
-
-
 
 > Lujitos
 ```
