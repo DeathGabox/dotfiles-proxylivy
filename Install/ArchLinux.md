@@ -145,8 +145,10 @@ nano /etc/sudoers
 ```
 nano /etc/locale.gen
   descomentar en_US.UTF-8 UTF-8
-              es_ES.UTF-8 UTF-8
+              es_CL.UTF-8 UTF-8
 locale-gen
+echo LANG=es_CL.UTF-8 > /etc/locale.conf
+export LANG=es_CL.UTF-8
 ```
 
 > Keymap
