@@ -19,9 +19,12 @@ ping -c 1 google.cl
 ``` 
 > Conectar wifi
 ```
-nmcli r wifi on
-nmcli d wifi list
-nmcli d wifi "Your\ Hostname" password "Your\ Password"
+iwctl station "device" connect "Your\ SSID"
+```
+
+```
+timedatectl set-ntp true
+timedatectl status
 ```
   
 </details>
@@ -73,7 +76,7 @@ mount /dev/sda1 /mnt/boot
 ```
 cfdisk
   dev/sda1 512M/EFI System
-  dev/sda2 dejando 4G/Linux x86_64 root
+  dev/sda2 dejando 4G/Linux filesystem
   dev/sda3 4G/Primary/Linux Swap
   "Write" y salir
 ```
@@ -85,17 +88,15 @@ lsblk
 
 > Crear Sistema de ficheros
 ```
-mkfs.vfat -F 32 /dev/sda1
-mkfs.ext4 /dev/sda2
-mkswap /dev/sda3
-swapon
+mkfs.vfat -F 32 -S 4096 /dev/device1
+mkfs.ext4 -b 4096 /dev/device2
+mkswap /dev/device3
+swapon /dev/device3
 ```
 
 > Montar particiones e instalar paquetes
 ```
-mount /dev/sda2 /mnt
-mkdir /mnt/efi
-mount /dev/sda1 /mnt/efi
+mount /dev/device2 /mnt
 ```
    
 </details>
@@ -104,14 +105,14 @@ mount /dev/sda1 /mnt/efi
    
 > instalar paquetes con pacstrap
 >
-> NOTE: en sistemas UEFI, instalar **efibootmgr os-probes ntfs-3g**
+> NOTE: en sistemas UEFI, instalar **efibootmgr os-prober ntfs-3g dosfstools mtools**
 ```
 pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-synaptics fish bat micro
 ```
    
 > Crear Fstab
 ```
-genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -U -p /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 ```
 
@@ -124,6 +125,13 @@ arch-chroot /mnt
 passwd
 useradd -m $USER -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/fish
 passwd $USER
+```
+
+> Configurar la hora y zona horaria
+```
+ls /usr/share/zoneinfo
+ln -s /usr/share/zoneinfo/"Area"/"Country" /etc/localtime
+hwclock --systohc --utc
 ```
 
 > Sudo Config
@@ -173,6 +181,9 @@ echo $HOSTNAME > /etc/hostname
 nano /etc/hosts
   Agregar la linea 127.0.0.1    $HOSTNAME.localhost $HOSTNAME
 ```
+
+
+
 
 > Lujitos
 ```
