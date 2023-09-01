@@ -25,12 +25,15 @@ Catppuccin-Mocha.conf       (Darkest Mode)
 
 ---
 USER
+```
 Configuration path: "/home/deathgabox/.config/qt6ct"
 Shared QSS paths:"/usr/share/qt6ct/qss")
 Shared color scheme paths: "/usr/share/qt6ct/colors")
-
+```
 ---
 ROOT
+```
 Configuration path: "/root/.config/qt6ct"
 Shared QSS paths:"/usr/share/qt6ct/qss")
 Shared color scheme paths:"/usr/share/qt6ct/colors")
+```
