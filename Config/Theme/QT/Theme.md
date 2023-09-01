@@ -9,10 +9,10 @@ sudo su
 cd /home/deathgabox/Documentos/Git
 git clone https://github.com/catppuccin/qt5ct.git
 cd qt5ct/themes/
-mkdir -p ~/.config/qt5ct/colors/
-cp Catppuccin-Mocha.conf /usr/share/qt5ct/colors/
-cp Catppuccin-Mocha.conf ~/.config/qt5ct/colors/
-**Configure qt5ct user & root**
+mkdir -p ~/.config/qt6ct/colors/
+cp Catppuccin-Mocha.conf /usr/share/qt6ct/colors/
+cp Catppuccin-Mocha.conf ~/.config/qt6ct/colors/
+**Configure qt6ct user & root**
 ```
 
 Colors
@@ -25,12 +25,12 @@ Catppuccin-Mocha.conf       (Darkest Mode)
 
 ---
 USER
-Configuration path: "/home/deathgabox/.config/qt5ct"
-Shared QSS paths:"/usr/share/qt5ct/qss")
-Shared color scheme paths: "/usr/share/qt5ct/colors")
+Configuration path: "/home/deathgabox/.config/qt6ct"
+Shared QSS paths:"/usr/share/qt6ct/qss")
+Shared color scheme paths: "/usr/share/qt6ct/colors")
 
 ---
 ROOT
-Configuration path: "/root/.config/qt5ct"
-Shared QSS paths:"/usr/share/qt5ct/qss")
-Shared color scheme paths:"/usr/share/qt5ct/colors")
+Configuration path: "/root/.config/qt6ct"
+Shared QSS paths:"/usr/share/qt6ct/qss")
+Shared color scheme paths:"/usr/share/qt6ct/colors")
