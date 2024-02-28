@@ -7,6 +7,8 @@
 
 First of all, thanks to all wikis around, every one worth the time to read and help, this is only a help for me, if help you in anything, it´s great but dont trust blind in every command, okey?
 
+For example, i use Wayland instead of Xorg, so, this make different design perpectives, [gammastep](https://gitlab.com/chinstrap/gammastep) instead of [Redshift](https://github.com/jonls/redshift) because [issues with wayland](https://github.com/jonls/redshift/issues/55)
+
 (WIP, not working links)
 
 The [Install Guide]() gives:
