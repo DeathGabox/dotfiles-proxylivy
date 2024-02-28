@@ -9,11 +9,9 @@ First of all, thanks to all wikis around, every one worth the time to read and h
 
 For example, i use Wayland instead of Xorg, so, this make different design perpectives, [gammastep](https://gitlab.com/chinstrap/gammastep) instead of [Redshift](https://github.com/jonls/redshift) because [issues with wayland](https://github.com/jonls/redshift/issues/55)
 
-(WIP, not working links)
-
-The [Install Guide]() gives:
+The [Install Guide](/installation-guide.md) gives:
 - Installation and first reboot
 - All necesary package
 
-The [Config Guide]() gives:
+The [Config Guide](/configuration-guide.md) gives:
 - .config moves and extra configuration
