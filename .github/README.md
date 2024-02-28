@@ -6,3 +6,11 @@
 > NOTE: [Official Wiki Arch](https://wiki.archlinux.org/)
 
 First of all, thanks to all wikis around, every one worth the time to read and help, this is only a help for me, if help you in anything, it´s great but dont trust blind in every command, okey?
+
+(WIP, not working links)
+The [Install Guide]() gives:
+- Installation and first reboot
+- All necesary package
+
+The [Config Guide]() gives:
+- .config moves and extra configuration
