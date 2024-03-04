@@ -7,7 +7,7 @@ You need to download an archlinux [iso](https://archlinux.org/download/) and bur
 
 > Change Layout to Latam
 ```
-loadkeys latam
+loadkeys la-latin1
 ```
 > NOTE: Ethernet automatically work
 
