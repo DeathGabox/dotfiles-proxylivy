@@ -15,3 +15,5 @@ The [Install Guide](/installation-guide.md) gives:
 
 The [Config Guide](/configuration-guide.md) gives:
 - .config moves and extra configuration
+
+Created to be used in real env, because Wayland dont work in Virtual Desktop AFAIK
