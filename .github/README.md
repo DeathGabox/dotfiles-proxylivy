@@ -65,10 +65,10 @@ Mozilla CSS is a bit tricky, see [Configuration Guide](/configuration-guide.md#f
 
 ```
 .mozilla
-├── firefox-esr
-    ├── rycwnmek.default-release
+└── firefox-esr
+    └── rycwnmek.default-release
         └── chrome
-            └── userChrome.css
+            ├── userChrome.css
             └── userContent.css
 
 ```
