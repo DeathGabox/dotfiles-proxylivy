@@ -17,3 +17,58 @@ The [Config Guide](/configuration-guide.md) gives:
 - .config moves and extra configuration
 
 Created to be used in real env, because Wayland dont work in Virtual Desktop AFAIK
+
+
+---
+
+I love [Hyprland](https://hyprland.org/), for more scalability, i made [hyprland.conf](/.config/hypr/hyprland.conf) with only include routes to the other .conf files, monitors.conf is managed by [nwg-displays](https://github.com/nwg-piotr/nwg-displays)
+
+```
+cd .config
+tree
+
+hypr/
+├── bind.conf
+├── env.conf
+├── exec.conf
+├── hyprland.conf
+├── monitors.conf
+├── variable.conf
+├── windowrulev2.conf
+└── workspaces.conf
+
+kitty/
+├── color.ini
+└── kitty.conf
+
+fastfetch/
+└── config.conf
+
+lf
+└── lfrc
+
+qt5ct/
+├── colors
+│   └── Catppuccin-Mocha.conf
+├── qss
+└── qt5ct.conf
+
+qt6ct/
+├── colors
+│   └── Catppuccin-Mocha.conf
+├── qss
+└── qt6ct.conf
+
+```
+
+Mozilla CSS is a bit tricky, see [Configuration Guide](/configuration-guide.md#firefox-config) for more info
+
+```
+.mozilla
+├── firefox-esr
+    ├── rycwnmek.default-release
+        └── chrome
+            └── userChrome.css
+            └── userContent.css
+
+```
