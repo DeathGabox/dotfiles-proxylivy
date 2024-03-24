@@ -53,7 +53,7 @@ I love [Hyprland](https://hyprland.org/), for more scalability, i made [hyprland
 │   │   └── Catppuccin-Mocha.conf
 │   ├── qss
 │   └── qt5ct.conf
-└── tofi (WIP)
+└── tofi
     ├── config
     ├── dmenu
     └── soy-milk
