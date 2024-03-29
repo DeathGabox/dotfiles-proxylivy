@@ -83,10 +83,13 @@ mv ~/Documents/git/dotfiles-gabo/.config ~/.config
 ### THEME
 
 My Favs <3
+- Manage GTK Themes [nwg-look](https://github.com/nwg-piotr/nwg-look)
+- Manage QT Themes [qt6ct](https://github.com/trialuser02/qt6ct) and [qt5ct](https://github.com/desktop-app/qt5ct) for failback
 - Theme GTK [Nordic](https://github.com/EliverLara/Nordic)
 - Theme QT [Catppucin](https://github.com/catppuccin/qt5ct)
 - Icons [Papirus Icon Theme](https://archlinux.org/packages/community/any/papirus-icon-theme/)
 - Mouse [Volante Cursors](https://github.com/varlesh/volantes-cursors)
+- Also this [reddit thread](https://www.reddit.com/r/kde/comments/urug5v/guide_to_a_consistent_application_style_in_plasma/) can help
 
 ```
 cd /home/$USER/Documentos/github
@@ -103,10 +106,8 @@ make build
 sudo make install
 ```
 
-https://github.com/catppuccin/qt5ct
-
 > QT
-> NOTE: add `QT_QPA_PLATFORMTHEME=qt5ct` to your env file and reboot
+> NOTE: add `QT_QPA_PLATFORMTHEME=qt6ct` to your env file and reboot
 
 <details>
  <summary><b>Configure qt6ct user & root</b></summary>
