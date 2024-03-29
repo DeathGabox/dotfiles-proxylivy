@@ -177,3 +177,9 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 cat ~/Documents/git/dotfiles-gabo/.package-backup/theme.conf > /usr/share/sddm/themes/tokyo-night-sddm/theme.conf
 ```
+
+
+## Extra notes
+### Qemu
+line 520-525 in /etc/libvirt/qemu.conf need to edit user and group, group with "libvirt-qemu", also start/enable all libvirt services related, omg
+
