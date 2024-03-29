@@ -1,0 +1,12 @@
+[Unit]
+Description=Display colour temperature adjustment
+#PartOf=display-manager.target
+#After=display-manager.target
+
+[Service]
+ExecStart=/usr/bin/gammastep -c Gammastep-Config-File
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
