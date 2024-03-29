@@ -71,3 +71,6 @@ Mozilla CSS is a bit tricky, see [Configuration Guide](/configuration-guide.md#f
 
 
 FINAL NOTE WIP: When i can finally learn how to make a vertical bar with EWWW, i gonna add screenshot :D
+
+But this is how Terminal look like, Kitty + Hack [Nerd Font](https://www.nerdfonts.com/)
+![Fastfetch Screenshot](/.github/assets/Fastfetch-Github.png)
