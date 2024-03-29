@@ -69,6 +69,55 @@ Mozilla CSS is a bit tricky, see [Configuration Guide](/configuration-guide.md#f
 
 ```
 
+SDDM is give me problems with user@970 but i still like it, maybe if i am more organized can help, SDDM work with /etc/sddd.conf.d/sddm.conf with the [Tokyo Night Theme](https://aur.archlinux.org/packages/sddm-theme-tokyo-night) 
+```
+/etc
+└── sddm.conf.d
+    └── sddm.conf
+
+/usr/share/sddm/themes
+├── breeze
+├── elarun
+├── maldives
+├── maya
+└── tokyo-night-sddm
+    ├── Assets
+    │   ├── Hibernate.svgz
+    │   ├── Reboot.svgz
+    │   ├── Shutdown.svgz
+    │   ├── Suspend.svgz
+    │   └── User.svgz
+    ├── Backgrounds
+    │   ├── geology.png
+    │   ├── Mountain.jpg
+    │   ├── path.png
+    │   ├── shacks.png
+    │   ├── tokyocity.png
+    │   ├── waves.png
+    │   └── win11.png
+    ├── Components
+    │   ├── Clock.qml
+    │   ├── Input.qml
+    │   ├── LoginForm.qml
+    │   ├── SessionButton.qml
+    │   ├── SystemButtons.qml
+    │   ├── UserList.qml
+    │   └── VirtualKeyboard.qml
+    ├── COPYING
+    ├── LICENSE
+    ├── Main.qml
+    ├── metadata.desktop
+    ├── preview.png
+    ├── Previews
+    │   ├── 1.png
+    │   ├── 2.png
+    │   ├── 3.png
+    │   └── 4.png
+    ├── README.md
+    └── theme.conf
+```
+
+
 
 FINAL NOTE WIP: When i can finally learn how to make a vertical bar with EWWW, i gonna add screenshot :D
 
