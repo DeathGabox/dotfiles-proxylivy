@@ -6,7 +6,7 @@
 	<submenu></submenu>
 	<unique-id>1693524489503094-1</unique-id>
 	<command> exec kitty --working-directory %f</command>
-	<description>Ejemplo de una acción personalizada</description>
+	<description>Abre una terminal</description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>
@@ -17,8 +17,8 @@
 	<name>Imprimir Archivo (Carta)</name>
 	<submenu></submenu>
 	<unique-id>1707779980723491-1</unique-id>
-	<command>lp -d HP_Smart_Tank_510_HP_Proliant_N40L -o fit-to-page -o media=letter %f</command>
-	<description>Imprime el archivo seleccionado usando Lprint</description>
+	<command>lp -d $$Impresora -o fit-to-page -o media=letter %f</command>
+	<description>Imprime Directamente</description>
 	<range></range>
 	<patterns>*.jpg;*.jpeg;*.png;*.md;*.pdf;*.txt;*.JPG;*.pdf</patterns>
 	<directories/>
