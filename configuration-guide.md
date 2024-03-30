@@ -3,6 +3,60 @@
 - [x] Read The Fabulous Manual ([RTFM](https://es.wikipedia.org/wiki/RTFM)) always, like [Archwiki](https://wiki.archlinux.org/) or Self-doc written by project, this is considered out of date by design
 
 # Configuration
+## Graphics
+
+Now, if you do correctly, you are in vanilla Archlinux, congratulations, now, configure Graphic Card, i have a `NVIDIA Geforce 940MX` Codename `NV118 (GM108) 	GeForce 830M, 840M, 930M, 940M[X]`
+
+Useful Links
+- READ THE WIKI AND FORUM AFTER INSTALL ANYTHING
+- [Archlinux Wiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
+- [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
+
+> Install Package
+```
+sudo pacman -Syu nvidia-dkms nvidia-utils opencl-nvidia libva libva-nvidia-driver libvdpau nvidia-prime nvtop nvidia-settings lib32-nvidia-utils lib32-libva lib32-libvdpau
+```
+
+> Config
+
+> In `/etc/default/grub` at the end of `GRUB_CMDLINE_LINUX_DEFAULT=""` add
+```
+nvidia_drm.modeset=1 nvidia_drm.fbdev=1
+```
+
+> In `/etc/mkinitcpio.conf` at the `MODULES` section add
+> NOTE: Also remove `kms` from `HOOKS`
+```
+nvidia nvidia_modeset nvidia_uvm nvidia_drm
+```
+
+> Update Grub and mkinitcpio
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
+mkinitcpio -p linux
+```
+
+> In `/etc/modprobe.d/nvidia.conf` add
+```
+options nvidia-drm modeset=1
+```
+
+> Fix Suspend Wakeup issues
+```
+systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service --now
+```
+
+> Install Intel Driver
+```
+intel-gmmlib intel-media-driver
+```
+
+> Install Vulkan
+```
+vulkan-icd-loader lib32-vulkan-icd-loader
+```
+
 ## Firefox Config 
 
 - [SimpleFox CSS Repo](https://github.com/migueravila/SimpleFox)
