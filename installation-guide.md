@@ -111,10 +111,10 @@ mount /dev/device1 -t vfat /boot/
 </details>
    
 ---
-   
+
 > Install with pacstrap
 ```
-pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel intel-ucode efibootmgr os-prober ntfs-3g dosfstools mtools
+pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel intel-ucode efibootmgr os-prober ntfs-3g dosfstools mtools sbsigntools sbctl sbsigntools efitools
 ```
 
 > Create Fstab
@@ -150,6 +150,7 @@ echo LANG=es_CL.UTF-8 > /etc/locale.conf
 ---
 ## Bootloader
 > NOTE: Remember only mount bootloader follow by BIOS configuration, and read [Grub](https://wiki.archlinux.org/title/GRUB) Documentation
+> Note: See [Grub#Shrim-Lock Wiki](https://wiki.archlinux.org/title/GRUB#Shim-lock)
 
 > Mount Bootloader Legacy BIOS
 ```
@@ -160,6 +161,46 @@ grub-install /dev/sdx // (nvmexnxpx)
 ```
 grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB --removable --recheck
 ```
+
+### USE CA
+- Note: Test this -> `grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB --removable --recheck --modules="tpm" --disable-shim-lock`
+
+### Create keys with sbctl
+NOTE: See this message (Your system is not in Setup Mode! Please reboot your machine and reset secure boot keys before attempting to enroll the keys.)
+NOTE2: You need to delete all keys, and tpm keys, to enter in setup mode [Youtube Help](https://www.youtube.com/watch?v=yU-SE7QX6WQ)
+```
+sudo sbctl status
+sudo sbctl create-keys
+sudo sbctl enroll-keys -m
+```
+
+### Signing
+Note: i think only need to sign `bootx64` and `grub`
+Note2: Can be automaticed with `sbctl verify | sed 's/✗ /sbctl sign -s /e'`
+```
+sudo sbctl verify
+sudo sbctl sign -s /boot/EFI/BOOT/BOOTX64.EFI
+sudo sbctl sign -s /boot/grub/x86_64-efi/grub.efi
+sudo sbctl sign -s /boot/grub/x86_64-efi/core.efi
+sudo sbctl sign -s /boot/vmlinuz-linux
+```
+
+### After Sign
+NOTE: You need to reboot and check
+```
+reboot
+sbctl status
+```
+
+## USE MOK MANAGER
+Note: Where is sbsign??
+```
+grub-install --target=x86_64-efi --efi-directory=/boot/ --modules="tpm" --sbat /usr/share/grub/sbat.csv
+sbsign --key MOK.key --cert MOK.crt --output /boot/EFI/GRUB/grubx64.efi /boot/EFI/GRUB/grubx64.efi
+cp esp/EFI/GRUB/grubx64.efi esp/EFI/BOOT/grubx64.efi
+```
+
+---
 
 > Update Grub
 ```
