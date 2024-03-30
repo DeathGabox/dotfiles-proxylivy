@@ -230,9 +230,16 @@ reboot
 Quick Note: Congrats!!, now with the fun part, customization.
 
 # First Startup
+## Internet
+```
+sudo systemctl enable NetworkManager.service --now
+```
+
 ## Spanish Mode
+```
 localectl set-x11-keymap latam
 localectl set-locale LANG=es_CL.UTF-8
+```
 
 ## Repo Config
 - Need Enable [ChaoticAUR](https://github.com/chaotic-aur) and [multilib](https://wiki.archlinux.org/title/Official_repositories) repo
@@ -316,62 +323,7 @@ pacman -S ttf-joypixels
 ```
 </details>
 
-## Graphics
-
-Now, if you do correctly, you are in vanilla Archlinux, congratulations, now, configure Graphic Card, i have a `NVIDIA Geforce 940MX` Codename `NV118 (GM108) 	GeForce 830M, 840M, 930M, 940M[X]`
-
-Useful Links
-- READ THE WIKI AND FORUM AFTER INSTALL ANYTHING
-- [Archlinux Wiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
-- [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
-
-> Install Package
-```
-sudo pacman -Syu nvidia-dkms nvidia-utils opencl-nvidia libva libva-nvidia-driver libvdpau nvidia-prime nvtop nvidia-settings lib32-nvidia-utils lib32-libva lib32-libvdpau
-```
-
-> Config
-
-> In `/etc/default/grub` at the end of `GRUB_CMDLINE_LINUX_DEFAULT=""` add
-```
-nvidia_drm.modeset=1 nvidia_drm.fbdev=1
-```
-
-> In `/etc/mkinitcpio.conf` at the `MODULES` section add
-> NOTE: Also remove `kms` from `HOOKS`
-```
-nvidia nvidia_modeset nvidia_uvm nvidia_drm
-```
-
-> Update Grub and mkinitcpio
-```
-grub-mkconfig -o /boot/grub/grub.cfg
-mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
-mkinitcpio -p linux
-```
-
-> In `/etc/modprobe.d/nvidia.conf` add
-```
-options nvidia-drm modeset=1
-```
-
-> Fix Suspend Wakeup issues
-```
-systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service --now
-```
-
-> Install Intel Driver
-```
-intel-gmmlib intel-media-driver
-```
-
-> Install Vulkan
-```
-vulkan-icd-loader lib32-vulkan-icd-loader
-```
-
-
-## Final Package Install
+## Final Extra Package
 ```
 sudo pacman -S virt-manager qemu virtualbox docker docker-compose wireshark-cli wireshark-qt adbmanager sane sane-airscan avahi cups usbmuxd mpd mpv
 ```
@@ -379,4 +331,16 @@ sudo pacman -S virt-manager qemu virtualbox docker docker-compose wireshark-cli 
 > Final Mod Permissions
 ```
 sudo usermod $USER -aG games,wheel,audio,kvm,optical,storage,uucp,video,wireshark,libvirt,audio,video,adbusers,saned,cups,lp,scanner,usbmux,mpd,input,libvirt-qemu,vboxusers,docker,render
+```
+
+> Start Services
+```
+systemctl enable docker sshd avahi-daemon cups virtqemud libvirtd --now
+```
+
+## Final WIP TESTING (Modprobe Kernel things) please ignore
+NOTE: Add this on MODULES?? [mkinitcpio](https://wiki.archlinux.org/title/Mkinitcpio#MODULES)
+> Modprobe
+```
+sudo modprobe -a vboxdrv
 ```
