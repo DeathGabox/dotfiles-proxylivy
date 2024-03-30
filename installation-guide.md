@@ -20,6 +20,7 @@ ping -c 1 google.cl
 ```
 > Connect Wifi
 ```
+ip a
 iwctl station "device" connect "Your\ SSID"
 ```
   
@@ -103,6 +104,8 @@ swapon /dev/device3
 NOTE: Boot is mounted next
 ```
 mount /dev/device2 /mnt
+mkdir /mnt/boot/
+mount /dev/device1 -t vfat /boot/
 ```
    
 </details>
@@ -110,12 +113,10 @@ mount /dev/device2 /mnt
 ---
    
 > Install with pacstrap
->
-> NOTE: in **UEFI systems**, you need to install **efibootmgr os-prober ntfs-3g dosfstools mtools**
 ```
-pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-synaptics bat micro intel-ucode
+pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel intel-ucode efibootmgr os-prober ntfs-3g dosfstools mtools
 ```
-   
+
 > Create Fstab
 ```
 genfstab -U -p /mnt >> /mnt/etc/fstab
@@ -134,47 +135,40 @@ passwd $USER
 ```
 
 > Sudo Config
+- Edit /etc/sudoers and discomment
 ```
-pacman -Sy sudo nano
-nano /etc/sudoers
-  descomentar %wheel ALL=(ALL:ALL) ALL
+%wheel ALL=(ALL:ALL) ALL
 ```
 
 > Configure Language
-> Edit `/etc/locale.gen` and discomment `en_US.UTF-8 UTF-8` and `es_CL.UTF-8 UTF-8`, then
-```           
+- In `/etc/locale.gen` discomment `en_US.UTF-8 UTF-8` and `es_CL.UTF-8 UTF-8`, then
+```
 locale-gen
 echo LANG=es_CL.UTF-8 > /etc/locale.conf
-export LANG=es_CL.UTF-8
-```
-
-> Keymap
-> Edit `/etc/vconsole.conf` and add `KEYMAP=latam`
-```
-localectl set-x11-keymap latam
-localectl set-locale LANG=es_CL.UTF-8
 ```
 
 ---
+## Bootloader
+> NOTE: Remember only mount bootloader follow by BIOS configuration, and read [Grub](https://wiki.archlinux.org/title/GRUB) Documentation
 
-> NOTE: Remember only mount bootloader follow by BIOS configuration
-> Mount Legacy BIOS
+> Mount Bootloader Legacy BIOS
 ```
 grub-install /dev/sdx // (nvmexnxpx)
-grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 > Mount Bootloader UEFI
 ```
-mount /dev/device1 -t vfat /boot/
-grub-install --bootloader-id=grub --target=x86_64-efi --removable --recheck
+grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB --removable --recheck
+```
+
+> Update Grub
+```
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
-Nota: --efi-directory=/boot/ podrias probar
-   
-      
+
 > Hostname
-NOTE: Change $HOSTNAME by the name you choose, duh
+- Edit `/etc/hosts`
+> Note: Change $HOSTNAME
 ```
 echo $HOSTNAME > /etc/hostname
 nano /etc/hosts
@@ -184,60 +178,42 @@ nano /etc/hosts
 </details>
 
 
-> Umount Partitions (WIP, i think is better `cd /`)
+> Umount Partitions
+Note: Before reboot, disconnect Any USB Device, some bios get blocked for some reason, and need to add .efi files to get secure boot
 ```
+exit
 umount -R /mnt
-```
-
-> Reboot
-NOTE: Remember disconnect Bootable USB
-NOTE2: Sometimes, you need to add .efi kernel files to your bios to recognize rigth in the boot
-```
-reboot now
+reboot
 ```
 
 Quick Note: Congrats!!, now with the fun part, customization.
 
 # First Startup
+## Spanish Mode
+localectl set-x11-keymap latam
+localectl set-locale LANG=es_CL.UTF-8
+
 ## Repo Config
-> Install YAY
-```
-mkdir -p Documents/$USER/repos
-cd !$ 
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-```
+- Need Enable [ChaoticAUR](https://github.com/chaotic-aur) and [multilib](https://wiki.archlinux.org/title/Official_repositories) repo
+- Optimize Pacman modifing `etc/pacman/conf` and uncomment `ParallelDownload=5` -> [more info](https://wiki.archlinux.org/title/Pacman#Enabling_parallel_downloads)
 
-> Optimize Pacman modifing `etc/pacman/conf` and uncomment `ParallelDownload=5` and add 4-5, more [info](https://wiki.archlinux.org/title/Pacman#Enabling_parallel_downloads)
+<details>
+   <summary><b>Install from backup(~2000Package)</b></summary>
 
-> Note: Need Enable [ChaoticAUR](https://github.com/chaotic-aur)
+> Note: 
 > Note2: pkglist is make with `pacman -Qqen > pkglist.txt` and aur package with `pacman -Qqem > aurpkglist.txt`
-
-> install Package by backup text
 ```
 sudo pacman -S --needed - < ~/Documents/git/dotfiles-deathgabox/.package-backup/pkglist.txt
 ```
-
-Install Yay Package by backup text
 ```
 yay -S --needed - < ~/Documents/git/dotfiles-deathgabox/.package-backup/aurpkglist.txt
 ```
 
-## Audio Server
-> Install Audio Server [Pipewire](https://wiki.archlinux.org/title/PipeWire)
+</details>
+
+### Install Package
 ```
-sudo pacman -S pipewire lib32-pipewire pipewire-docs pipewire-audio pipewire-alsa pipewire-pulse alsa-utils bluez bluez-utils blueman pavucontrol
-```
-```
-systemctl enable pipewire-pulse.service --user --now
-```
-(Wip, i dont know if this still necesary)
-```
-amixer sset Master unmute
-amixer sset Speaker unmute
-amixer sset Headphone unmute
-alsamixer
+gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-libinput bat micro
 ```
 
 ## Wine package
@@ -250,8 +226,8 @@ sudo pacman -S --needed giflib lib32-giflib libpng lib32-libpng libldap lib32-li
 Now, if you do correctly, you are in vanilla Archlinux, congratulations, now, configure Graphic Card, i have a `NVIDIA Geforce 940MX` Codename `NV118 (GM108) 	GeForce 830M, 840M, 930M, 940M[X]`
 
 Useful Links
+- READ THE WIKI AND FORUM AFTER INSTALL ANYTHING
 - [Archlinux Wiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
-- [Archlinux Official Repositories(To enable multilib)](https://wiki.archlinux.org/title/Official_repositories)
 - [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
 
 > Install Package
@@ -261,13 +237,13 @@ sudo pacman -Syu nvidia-dkms nvidia-utils opencl-nvidia libva libva-nvidia-drive
 
 > Config
 
-> At the end of `GRUB_CMDLINE_LINUX_DEFAULT=""` you need to add
+> In `/etc/default/grub` at the end of `GRUB_CMDLINE_LINUX_DEFAULT=""` add
 ```
 nvidia_drm.modeset=1 nvidia_drm.fbdev=1
 ```
 
-> At `MODULES` section in `/etc/mkinitcpio.conf` add
-NOTE: Also remove kms from `HOOKS` in `/etc/mkinitcpio.conf`
+> In `/etc/mkinitcpio.conf` at the `MODULES` section add
+> NOTE: Also remove `kms` from `HOOKS`
 ```
 nvidia nvidia_modeset nvidia_uvm nvidia_drm
 ```
@@ -276,18 +252,17 @@ nvidia nvidia_modeset nvidia_uvm nvidia_drm
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
 mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
+mkinitcpio -p linux
 ```
 
-> Write in `/etc/modprobe.d/nvidia.conf`
+> In `/etc/modprobe.d/nvidia.conf` add
 ```
 options nvidia-drm modeset=1
 ```
 
 > Fix Suspend Wakeup issues
 ```
-systemctl enable nvidia-suspend.service --now
-systemctl enable nvidia-hibernate.service --now
-systemctl enable nvidia-resume.service --now
+systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service --now
 ```
 
 > Install Intel Driver
@@ -300,6 +275,31 @@ intel-gmmlib intel-media-driver
 vulkan-icd-loader lib32-vulkan-icd-loader
 ```
 
+## Audio Server
+> Install Audio Server [Pipewire](https://wiki.archlinux.org/title/PipeWire)
+```
+sudo pacman -S pipewire lib32-pipewire pipewire-docs pipewire-audio pipewire-alsa pipewire-jack pipewire-v4l2 pipewire-pulse alsa-utils bluez bluez-utils blueman pavucontrol gst-plugin-pipewire libpipewire lib32-libpipewire libwireplumber qpwgraph wireplumber
+```
+
+> Start Pipewire with pulseaudio
+```
+systemctl enable pipewire-pulse.service --user --now
+```
+
+> Unmute from alsa-utils
+```
+amixer sset Master unmute
+amixer sset Speaker unmute
+amixer sset Headphone unmute
+alsamixer
+```
+
+> Need to Reboot
+```
+reboot
+```
+
+
 ## Desktop
 > Install Simple Desktop Package
 ```
@@ -310,32 +310,9 @@ pacman -S wayland weston hyprland
    <summary><b>Fuentes adicionales</b></summary>
    <br>
 
-> Manual install Fonts (Prefer Arch Package)
-> Hack Font
-```
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip
-unzip Hack.zip
-mkdir /usr/share/fonts/Hack
-mv Hack\ Regular\ Nerd\ Font\ Complete.ttf /usr/share/fonts/Hack/
-mv Hack\ Regular\ Nerd\ Font\ Complete\ Mono.ttf /usr/share/fonts/Hack/
-rm *.ttf Hack.zip LICENSE.md readme.md
-```
-
-> JetBrainsMono Font
-```
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
-unzip JetBrainsMono.zip
-mkdir /usr/share/fonts/JetBrains
-mv JetBrains\ Mono\ Regular\ Nerd\ Font\ Complete.ttf /usr/share/fonts/JetBrains/
-mv JetBrains\ Mono\ Regular\ Nerd\ Font\ Complete\ Mono.ttf /usr/share/fonts/JetBrains/
-rm *.ttf JetBrainsMono.zip readme.md OFL.txt
-fc-cache
-```
-
-> Arch Package (Recommend)
 > Fuentes Asiaticas
 ```
-pacman -S asian-fonts wqy-zenhei ttf-hanazono ttf-baekmuk
+pacman -S wqy-zenhei ttf-hanazono ttf-baekmuk
 ```
 
 > Fuentes
@@ -351,11 +328,9 @@ pacman -S lib32-fontconfig
 ```
 pacman -S ttf-joypixels
 ```
-
 </details>
 
-> Mod Permissions
+> Final Mod Permissions
 ```
-sudo usermod $USER -aG games,wheel,audio,kvm,optical,storage,uucp,video,wireshark,libvirt,audio,video,adbusers,saned,cups,lp,scanner,usbmux,mpd,input,libvirt-qem
-u,vboxusers,docker,render
+sudo usermod $USER -aG games,wheel,audio,kvm,optical,storage,uucp,video,wireshark,libvirt,audio,video,adbusers,saned,cups,lp,scanner,usbmux,mpd,input,libvirt-qemu,vboxusers,docker,render
 ```
