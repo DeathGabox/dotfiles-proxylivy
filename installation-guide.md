@@ -262,6 +262,60 @@ gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-libinput bat micro
 sudo pacman -S --needed giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader
 ```
 
+## Audio Server
+> Install Audio Server [Pipewire](https://wiki.archlinux.org/title/PipeWire)
+```
+sudo pacman -S pipewire lib32-pipewire pipewire-docs pipewire-audio pipewire-alsa pipewire-jack pipewire-v4l2 pipewire-pulse alsa-utils bluez bluez-utils blueman pavucontrol gst-plugin-pipewire libpipewire lib32-libpipewire libwireplumber qpwgraph wireplumber
+```
+
+> Start Pipewire with pulseaudio
+```
+systemctl enable pipewire-pulse.service --user --now
+```
+
+> Unmute from alsa-utils
+```
+amixer sset Master unmute
+amixer sset Speaker unmute
+amixer sset Headphone unmute
+alsamixer
+```
+
+> Need to Reboot
+```
+reboot
+```
+
+## Desktop
+> Install Simple Desktop Package
+```
+pacman -S wayland weston hyprland
+```
+
+ <details>
+   <summary><b>Fuentes adicionales</b></summary>
+   <br>
+
+> Fuentes Asiaticas
+```
+pacman -S wqy-zenhei ttf-hanazono ttf-baekmuk
+```
+
+> Fuentes
+```
+pacman -S ttf-jetbrains-mono ttf-hack-nerd cantarell ttf-dejavu
+```
+
+> Fuentes lib32
+```
+pacman -S lib32-fontconfig
+```
+> Emojis
+```
+pacman -S ttf-joypixels
+```
+</details>
+
 ## Graphics
 
 Now, if you do correctly, you are in vanilla Archlinux, congratulations, now, configure Graphic Card, i have a `NVIDIA Geforce 940MX` Codename `NV118 (GM108) 	GeForce 830M, 840M, 930M, 940M[X]`
@@ -316,60 +370,11 @@ intel-gmmlib intel-media-driver
 vulkan-icd-loader lib32-vulkan-icd-loader
 ```
 
-## Audio Server
-> Install Audio Server [Pipewire](https://wiki.archlinux.org/title/PipeWire)
-```
-sudo pacman -S pipewire lib32-pipewire pipewire-docs pipewire-audio pipewire-alsa pipewire-jack pipewire-v4l2 pipewire-pulse alsa-utils bluez bluez-utils blueman pavucontrol gst-plugin-pipewire libpipewire lib32-libpipewire libwireplumber qpwgraph wireplumber
-```
 
-> Start Pipewire with pulseaudio
+## Final Package Install
 ```
-systemctl enable pipewire-pulse.service --user --now
+sudo pacman -S virt-manager qemu virtualbox docker docker-compose wireshark-cli wireshark-qt adbmanager sane sane-airscan avahi cups usbmuxd mpd mpv
 ```
-
-> Unmute from alsa-utils
-```
-amixer sset Master unmute
-amixer sset Speaker unmute
-amixer sset Headphone unmute
-alsamixer
-```
-
-> Need to Reboot
-```
-reboot
-```
-
-
-## Desktop
-> Install Simple Desktop Package
-```
-pacman -S wayland weston hyprland
-```
-
- <details>
-   <summary><b>Fuentes adicionales</b></summary>
-   <br>
-
-> Fuentes Asiaticas
-```
-pacman -S wqy-zenhei ttf-hanazono ttf-baekmuk
-```
-
-> Fuentes
-```
-pacman -S ttf-jetbrains-mono ttf-hack-nerd cantarell ttf-dejavu
-```
-
-> Fuentes lib32
-```
-pacman -S lib32-fontconfig
-```
-> Emojis
-```
-pacman -S ttf-joypixels
-```
-</details>
 
 > Final Mod Permissions
 ```
