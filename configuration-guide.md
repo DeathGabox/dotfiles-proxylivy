@@ -12,19 +12,10 @@ Useful Links
 - [Archlinux Wiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
 - [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
 
-- Install and make work igpu from the cpu (intel)
-- Test intel gpu
-- Install and test NVIDIA
-
-<detail>
-Info about my sistem
-Intel i5-6200U is Gen9 GPU architecture with HD Graphics 520 (GT2 Tier)
-</detail>
-
 > Intall Package Intel
-> Note: Make sure you do not have nomodeset as a kernel parameter, since Intel requires kernel mode-setting.
+> Note: Intel i5-6200U - Gen9 GPU HD Graphics 529
 ```
-sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver 
+sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver libva-utils
 ```
 
 > Enable GuC
@@ -40,7 +31,8 @@ sudo mkinitcpio -p linux
 ```
 reboot
 ```
-
+Test Hybrid
+> 
 
 > Install Package
 ```
