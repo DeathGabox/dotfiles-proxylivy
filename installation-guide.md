@@ -114,7 +114,7 @@ mount /dev/device1 -t vfat /boot/
 
 > Install with pacstrap
 ```
-pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel intel-ucode efibootmgr os-prober ntfs-3g dosfstools mtools sbsigntools sbctl sbsigntools efitools
+pacstrap /mnt linux linux-firmware linux-headers networkmanager grub wpa_supplicant base base-devel intel-ucode efibootmgr os-prober ntfs-3g dosfstools mtools sbsigntools sbctl sbsigntools efitools
 ```
 
 > Create Fstab
