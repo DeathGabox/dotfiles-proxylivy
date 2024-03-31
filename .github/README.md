@@ -10,9 +10,11 @@ Take note i use Wayland instead of Xorg, this make different design perpectives 
 
 The [Install Guide](/installation-guide.md) gives:
 - Installation and first reboot
-- All necesary package
+- packages
 
 The [Config Guide](/configuration-guide.md) gives:
+- More Packages 📦
+- Graphics Install (Va-api rules)
 - .config and extra configuration
 
 Created to be used in real env, because Hyprland can't work with good performance without GPU passthru | [Info](https://wiki.hyprland.org/Getting-Started/Master-Tutorial/#vm)
