@@ -45,7 +45,7 @@ sudo pacman -S dkms nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-prime nvi
 > Install Nvidia Acceleration Layer
 > NOTE: Follow [ElFarto nvidia-vaapi-driver config](https://github.com/elFarto/nvidia-vaapi-driver/)
 ```
-sudo pacman -S libva-mesa-driver mesa-vdpau nvtop meson gst-plugins-bad ffnvcodec-headers
+sudo pacman -S libva-mesa-driver mesa-vdpau nvtop meson ffnvcodec-headers
 ```
 
 > Config
