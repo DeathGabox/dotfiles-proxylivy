@@ -32,13 +32,9 @@ sudo mkinitcpio -p linux
 reboot
 ```
 
-- [ ] Test Hybrid
-
-
-
 > Install Nvidia Package
 ```
-sudo pacman -S 
+sudo pacman -S dkms 
 ```
 
 > Install Nvidia Acceleration Layer
