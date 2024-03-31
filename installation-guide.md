@@ -325,7 +325,7 @@ pacman -S ttf-joypixels
 
 ## Final Extra Package
 ```
-sudo pacman -S virt-manager qemu virtualbox docker docker-compose wireshark-cli wireshark-qt adbmanager sane sane-airscan avahi cups usbmuxd mpd mpv
+sudo pacman -S virt-manager qemu virtualbox docker docker-compose wireshark-cli wireshark-qt adbmanager sane sane-airscan avahi cups usbmuxd mpd mpv wf-recorder
 ```
 
 > Final Mod Permissions
