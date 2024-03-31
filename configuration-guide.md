@@ -18,6 +18,10 @@ Useful Links
 ```
 sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver libva libva-utils lib32-libva intel-gmmlib gst-plugin-va
 ```
+> Install gst-plugins
+```
+sudo pacman -S gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav libde265 gst-plugin-pipewire
+```
 
 > Enable GuC
 - Edit `/etc/modprobe.d/i915.conf` add
