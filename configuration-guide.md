@@ -288,3 +288,11 @@ In `commands` per game add:
 ```
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia %command%
 ```
+
+## Hyprland Package Working
+```
+sudo pacman -S cliphist wl-clipboard wlogout grim slurp swappy wf-recorder hyprpicker brightnessctl playerctl kitty thunar
+```
+```
+yay -S tofi
+```
