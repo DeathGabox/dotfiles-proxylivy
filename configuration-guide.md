@@ -81,6 +81,11 @@ sudo systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-res
 vulkan-icd-loader lib32-vulkan-icd-loader
 ```
 
+> In `~/.config/mpv/mpv.conf` add
+```
+hwdec=vaapi,auto-safe
+```
+
 ## Firefox Config 
 
 - [SimpleFox CSS Repo](https://github.com/migueravila/SimpleFox)
