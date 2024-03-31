@@ -73,7 +73,7 @@ options nvidia-drm modeset=1
 
 > Fix Suspend Wakeup issues
 ```
-systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service --now
+sudo systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service
 ```
 
 > Install Vulkan
