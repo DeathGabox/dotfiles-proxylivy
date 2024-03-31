@@ -9,6 +9,7 @@ Now, if you do correctly, you are in vanilla Archlinux, congratulations, now, co
 
 Useful Links
 - READ THE WIKI AND FORUM AFTER INSTALL ANYTHING
+- AS 01/abr/2024 NVIDIA IS BROKEN, as usual, intel work good for me, configuring prime-run also work
 - [Archlinux Wiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
 - [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
 
