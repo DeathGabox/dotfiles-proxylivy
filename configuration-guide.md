@@ -43,6 +43,7 @@ sudo pacman -S dkms nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-prime nvi
 ```
 
 > Install Nvidia Acceleration Layer
+> 
 > NOTE: Follow [ElFarto nvidia-vaapi-driver config](https://github.com/elFarto/nvidia-vaapi-driver/)
 ```
 sudo pacman -S libva-mesa-driver mesa-vdpau nvtop meson ffnvcodec-headers
@@ -51,16 +52,21 @@ sudo pacman -S libva-mesa-driver mesa-vdpau nvtop meson ffnvcodec-headers
 > Config
 
 > In `/etc/default/grub` at the end of `GRUB_CMDLINE_LINUX_DEFAULT=""` add
+> 
 > NOTE: i dont know if `nvidia_drm.fbdev=1` works fine
 ```
 nvidia_drm.modeset=1
 ```
 
 > In `/etc/mkinitcpio.conf` at the `MODULES` section add
+>
 > NOTE: Also remove `kms` from `HOOKS`
+>
 > NOTE2: This also dont work good
+>
+> NOTE3: Without nvidia_modeset seem to work good
 ```
-nvidia nvidia_modeset nvidia_uvm nvidia_drm
+nvidia nvidia_uvm nvidia_drm
 ```
 
 > Update Grub and mkinitcpio
