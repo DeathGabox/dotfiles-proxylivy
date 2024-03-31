@@ -15,7 +15,7 @@ Useful Links
 > Intall Package Intel
 > Note: Intel i5-6200U - Gen9 GPU HD Graphics 529
 ```
-sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver libva-utils
+sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver libva-utils intel-gmmlib
 ```
 
 > Enable GuC
@@ -31,8 +31,20 @@ sudo mkinitcpio -p linux
 ```
 reboot
 ```
-Test Hybrid
-> 
+
+- [ ] Test Hybrid
+
+
+
+> Install Nvidia Package
+```
+sudo pacman -S 
+```
+
+> Install Nvidia Acceleration Layer
+```
+sudo pacman -S libva-mesa-driver mesa-vdpau
+```
 
 > Install Package
 ```
@@ -67,11 +79,6 @@ options nvidia-drm modeset=1
 > Fix Suspend Wakeup issues
 ```
 systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service --now
-```
-
-> Install Intel Driver
-```
-intel-gmmlib intel-media-driver
 ```
 
 > Install Vulkan
