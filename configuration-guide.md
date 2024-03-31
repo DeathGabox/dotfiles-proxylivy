@@ -15,7 +15,7 @@ Useful Links
 > Intall Package Intel
 > Note: Intel i5-6200U - Gen9 GPU HD Graphics 529
 ```
-sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver libva-utils intel-gmmlib
+sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver libva libva-utils lib32-libva intel-gmmlib
 ```
 
 > Enable GuC
@@ -34,17 +34,18 @@ reboot
 
 > Install Nvidia Package
 ```
-sudo pacman -S dkms 
+sudo pacman -S dkms nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-prime nvidia-settings libvdpau lib32-libvdpau
 ```
 
 > Install Nvidia Acceleration Layer
+> NOTE: Follow [ElFarto nvidia-vaapi-driver config](https://github.com/elFarto/nvidia-vaapi-driver/)
 ```
-sudo pacman -S libva-mesa-driver mesa-vdpau
+sudo pacman -S libva-mesa-driver mesa-vdpau nvtop meson gst-plugins-bad ffnvcodec-headers
 ```
 
-> Install Package
+> Install Extra Package
 ```
-sudo pacman -Syu nvidia-dkms nvidia-utils opencl-nvidia libva libva-nvidia-driver libvdpau nvidia-prime nvtop nvidia-settings lib32-nvidia-utils lib32-libva lib32-libvdpau
+opencl-nvidia lib32-opencl-nvidia cuda 
 ```
 
 > Config
