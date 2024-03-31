@@ -16,7 +16,7 @@ Useful Links
 > Intall Package Intel
 > Note: Intel i5-6200U - Gen9 GPU HD Graphics 529
 ```
-sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver libva libva-utils lib32-libva intel-gmmlib
+sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver libva libva-utils lib32-libva intel-gmmlib gst-plugin-va
 ```
 
 > Enable GuC
