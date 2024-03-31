@@ -22,6 +22,11 @@ sudo pacman -S mesa lib32-mesa intel-media-driver libva libva-utils lib32-libva 
 ```
 sudo pacman -S gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav libde265 gst-plugin-pipewire gst-plugin-va
 ```
+> Enable Intel Kernel
+- In `/etc/mkinitcpio.conf` at MODULES, add
+```
+i915
+```
 
 > Enable GuC
 - Edit `/etc/modprobe.d/i915.conf` add
@@ -88,7 +93,7 @@ sudo systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-res
 
 > Install Vulkan
 ```
-vulkan-icd-loader lib32-vulkan-icd-loader vulkan-intel lib32-vulkan-intel vulkan-tools
+sudo pacman -S vulkan-icd-loader lib32-vulkan-icd-loader vulkan-intel lib32-vulkan-intel vulkan-tools
 ```
 
 > In `~/.config/mpv/mpv.conf` add
