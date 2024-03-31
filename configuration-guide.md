@@ -1,5 +1,7 @@
 > Note: This is a forever work in progress
 
+[Notes to read about acceleration](https://www.linuxquestions.org/questions/slackware-14/enabling-intel-video-hardware-acceleration-4175721864/)
+
 - [x] Read The Fabulous Manual ([RTFM](https://es.wikipedia.org/wiki/RTFM)) always, like [Archwiki](https://wiki.archlinux.org/) or Self-doc written by project, this is considered out of date by design
 
 # Configuration
