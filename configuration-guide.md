@@ -43,20 +43,17 @@ sudo pacman -S dkms nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-prime nvi
 sudo pacman -S libva-mesa-driver mesa-vdpau nvtop meson gst-plugins-bad ffnvcodec-headers
 ```
 
-> Install Extra Package
-```
-opencl-nvidia lib32-opencl-nvidia cuda 
-```
-
 > Config
 
 > In `/etc/default/grub` at the end of `GRUB_CMDLINE_LINUX_DEFAULT=""` add
+> NOTE: i dont know if `nvidia_drm.fbdev=1` works fine
 ```
-nvidia_drm.modeset=1 nvidia_drm.fbdev=1
+nvidia_drm.modeset=1
 ```
 
 > In `/etc/mkinitcpio.conf` at the `MODULES` section add
 > NOTE: Also remove `kms` from `HOOKS`
+> NOTE2: This also dont work good
 ```
 nvidia nvidia_modeset nvidia_uvm nvidia_drm
 ```
