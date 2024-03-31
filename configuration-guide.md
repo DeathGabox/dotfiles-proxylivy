@@ -276,3 +276,8 @@ cat ~/Documents/git/dotfiles-gabo/.package-backup/theme.conf > /usr/share/sddm/t
 ### Qemu
 line 520-525 in /etc/libvirt/qemu.conf need to edit user and group, group with "libvirt-qemu", also start/enable all libvirt services related, omg
 
+## Steam
+In `commands` per game add:
+```
+__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia %command%
+```
