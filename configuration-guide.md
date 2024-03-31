@@ -46,7 +46,7 @@ sudo pacman -S dkms nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-prime nvi
 > 
 > NOTE: Follow [ElFarto nvidia-vaapi-driver config](https://github.com/elFarto/nvidia-vaapi-driver/)
 ```
-sudo pacman -S libva-mesa-driver mesa-vdpau nvtop meson ffnvcodec-headers
+sudo pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau nvtop meson ffnvcodec-headers
 ```
 
 > Config
