@@ -16,11 +16,11 @@ Useful Links
 > Intall Package Intel
 > Note: Intel i5-6200U - Gen9 GPU HD Graphics 529
 ```
-sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver libva libva-utils lib32-libva intel-gmmlib gst-plugin-va
+sudo pacman -S mesa lib32-mesa intel-media-driver libva libva-utils lib32-libva intel-gmmlib
 ```
 > Install gst-plugins
 ```
-sudo pacman -S gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav libde265 gst-plugin-pipewire
+sudo pacman -S gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav libde265 gst-plugin-pipewire gst-plugin-va
 ```
 
 > Enable GuC
@@ -88,7 +88,7 @@ sudo systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-res
 
 > Install Vulkan
 ```
-vulkan-icd-loader lib32-vulkan-icd-loader
+vulkan-icd-loader lib32-vulkan-icd-loader vulkan-intel lib32-vulkan-intel vulkan-tools
 ```
 
 > In `~/.config/mpv/mpv.conf` add
