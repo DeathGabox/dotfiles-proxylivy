@@ -12,6 +12,36 @@ Useful Links
 - [Archlinux Wiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
 - [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
 
+- Install and make work igpu from the cpu (intel)
+- Test intel gpu
+- Install and test NVIDIA
+
+<detail>
+Info about my sistem
+Intel i5-6200U is Gen9 GPU architecture with HD Graphics 520 (GT2 Tier)
+</detail>
+
+> Intall Package Intel
+> Note: Make sure you do not have nomodeset as a kernel parameter, since Intel requires kernel mode-setting.
+```
+sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver 
+```
+
+> Enable GuC
+- Edit `/etc/modprobe.d/i915.conf` add
+```
+options i915 enable_guc=2
+```
+> Regenerate initfram
+```
+sudo mkinitcpio -p linux
+```
+> is important reboot to see if work
+```
+reboot
+```
+
+
 > Install Package
 ```
 sudo pacman -Syu nvidia-dkms nvidia-utils opencl-nvidia libva libva-nvidia-driver libvdpau nvidia-prime nvtop nvidia-settings lib32-nvidia-utils lib32-libva lib32-libvdpau
