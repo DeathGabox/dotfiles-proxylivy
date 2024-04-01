@@ -16,7 +16,7 @@ Useful Links
 - [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
 
 > Intall Package Intel
-> Note: Intel i5-6200U - Gen9 GPU HD Graphics 529
+> Note: Intel i5-6200U - Gen9 GPU HD Graphics 520
 ```
 sudo pacman -S mesa lib32-mesa intel-media-driver libva libva-utils lib32-libva intel-gmmlib
 ```
@@ -200,10 +200,10 @@ sudo mv Nordic/ /usr/share/themes
 > Cursors
 ```
 cd /home/$USER/Documentos/github
-git clone https://github.com/varlesh/volantes-cursors.git
-cd volantes-cursors
-make build
-sudo make install
+wget https://github.com/ful1e5/BreezeX_Cursor/releases/download/v2.0.0/BreezeX-Black.tar.gz
+tar xvf BreezeX-Black.tar.gz
+rm -drf BreezeX-Black.tar.gz
+sudo mv BreezeX-* /usr/share/icons/
 ```
 
 > QT
@@ -241,9 +241,9 @@ Catppuccin-Mocha.conf       (Darkest Mode)
 > Clone and Copy Files
 ```
 cd ~/Documents/git
-https://github.com/catppuccin/tty.git && cd tty
+git clone https://github.com/catppuccin/tty.git && cd tty
 chmod a+x *.sh
-./generate.sh macchiato
+./generate.sh mocha
 ```
 > Edit `/etc/default/grub` and append the stdin of sh script to `GRUB_CMDLINE_LINUX`
 
