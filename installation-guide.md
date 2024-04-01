@@ -252,7 +252,7 @@ sudo pacman -S wqy-zenhei ttf-hanazono ttf-baekmuk ttf-jetbrains-mono ttf-hack-n
 ## All Package
 > Note: recomend to open weston to copy and paste 
 ```
-sudo pacman -S virt-manager qemu virtualbox docker docker-compose wireshark-cli wireshark-qt adbmanager sane sane-airscan avahi cups usbmuxd mpd mpv wf-recorder gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-libinput bat micro kitty nwg-look nwg-displays imagemagick python-pygments ghostscript libheif libraw libwmf dvjulibre qt5-base qt6-base qt5-svg qt5-wayland qt6-wayland catfish tumbler thunar-volman thunar-archive-plugin xarchiver thunar-media-tags-plugin ffmpegthumbnailer libgsf libgepub libopenraw lha lrzip lzip lzop p7zip unarj unrar unzip zip tool colordiff diff-so-fancy git-delta glow highlight jq mdcat perl-image-exiftool source-highlight cdrtools html2text antiword odt2txt catdoc
+sudo pacman -S virt-manager qemu virtualbox docker docker-compose wireshark-cli wireshark-qt adbmanager sane sane-airscan avahi cups usbmuxd mpd mpv wf-recorder gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-libinput bat micro kitty nwg-look nwg-displays imagemagick python-pygments ghostscript libheif libraw libwmf dvjulibre qt5-base qt6-base qt5-svg qt5-wayland qt6-wayland catfish tumbler thunar-volman thunar-archive-plugin xarchiver thunar-media-tags-plugin ffmpegthumbnailer libgsf libgepub libopenraw lha lrzip lzip lzop p7zip unarj unrar unzip zip tool colordiff diff-so-fancy git-delta glow highlight jq mdcat perl-image-exiftool source-highlight cdrtools html2text antiword odt2txt catdoc cliphist wl-clipboard wlogout grim slurp swappy wf-recorder hyprpicker brightnessctl playerctl kitty thunar
 ```
 
 ## Permissions
@@ -268,6 +268,10 @@ systemctl enable docker sshd avahi-daemon cups virtqemud libvirtd --now
 ## Wine package
 ```
 sudo pacman -S --needed giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader
+```
+## Yay Package
+```
+yay -S tofi ctpv
 ```
 
 ## Audio Server
