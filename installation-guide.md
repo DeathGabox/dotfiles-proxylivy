@@ -275,17 +275,17 @@ yay -S tofi ctpv
 ```
 
 ## Audio Server
-> Install Audio Server [Pipewire](https://wiki.archlinux.org/title/PipeWire)
+### Install Audio Server [Pipewire](https://wiki.archlinux.org/title/PipeWire)
 ```
 sudo pacman -S pipewire lib32-pipewire pipewire-docs pipewire-audio pipewire-alsa pipewire-jack pipewire-v4l2 pipewire-pulse alsa-utils bluez bluez-utils blueman pavucontrol gst-plugin-pipewire libpipewire lib32-libpipewire libwireplumber qpwgraph wireplumber
 ```
 
-> Start Pipewire with pulseaudio
+### Start Pipewire with pulseaudio
 ```
 systemctl enable pipewire-pulse.service --user --now
 ```
 
-> Unmute from alsa-utils
+### Unmute from alsa-utils
 ```
 amixer sset Master unmute
 amixer sset Speaker unmute
@@ -293,14 +293,14 @@ amixer sset Headphone unmute
 alsamixer
 ```
 
-> Need to Reboot
+## mkinitcpio
+> Note: [Mkinitcpio](https://wiki.archlinux.org/title/Mkinitcpio#MODULES) Modules
+```
+i915 kvm kvm_intel virtio-net virtio-blk virtio-scsi virtio-balloon virtio_pci vboxdrv
+```
+
+## Final Step: REBOOT
 ```
 reboot
 ```
 
-## Final WIP TESTING (Modprobe Kernel things) please ignore
-NOTE: Add this on MODULES?? [mkinitcpio](https://wiki.archlinux.org/title/Mkinitcpio#MODULES)
-> Modprobe
-```
-sudo modprobe -a vboxdrv
-```
