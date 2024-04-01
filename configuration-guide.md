@@ -270,29 +270,30 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 `lp -d $Printer -o fit-to-page -o media=letter %f`
 
 ## SDDM
-
+### Installation
 > Theme [Aur](https://aur.archlinux.org/packages/sddm-theme-tokyo-night)
->
-> Installation
 ```
-cat ~/Documents/git/dotfiles-gabo/.package-backup/theme.conf > /usr/share/sddm/themes/tokyo-night-sddm/theme.conf
+cd ~/Documents/git/dotfiles-gabo/etc/sddm.conf.d/
+cat theme.conf > /usr/share/sddm/themes/tokyo-night-sddm/theme.conf
+mkdir /etc/sddm.conf.d
+cat sddm.conf > /etc/sddm.conf.d/sddm.conf
 ```
 
-
-## Extra notes
-### Qemu
-line 520-525 in /etc/libvirt/qemu.conf need to edit user and group, group with "libvirt-qemu", also start/enable all libvirt services related, omg
+## Qemu
+### User-Group
+> Info about [Qemu](https://wiki.archlinux.org/title/QEMU)
+- In `/etc/libvirt/qemu.conf` ~520-525 line, discomment, change user to $USER
+```
+user="$USER"
+group="libvirt-qemu"
+```
+### Enable Systemctl
+```
+systemctl enable libvirtd virtqemud virtstoraged virtnodedevd virtnetworkd --now
+```
 
 ## Steam
 In `commands` per game add:
 ```
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia %command%
-```
-
-## Hyprland Package Working
-```
-sudo pacman -S cliphist wl-clipboard wlogout grim slurp swappy wf-recorder hyprpicker brightnessctl playerctl kitty thunar
-```
-```
-yay -S tofi ctpv
 ```
