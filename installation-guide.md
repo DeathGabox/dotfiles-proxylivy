@@ -19,22 +19,15 @@ loadkeys la-latin1
 ping -c 1 google.cl
 ```
 > Connect Wifi
+with `ip a` you can view `station`, usually is `wlan0` in my device
 ```
 ip a
-iwctl station "device" connect "Your\ SSID"
+iwctl station "station" scan
+iwctl station "station" get-networks
+iwctl station "station" connect "Your\ SSID"
 ```
   
 </details>
-
-> Configure Local Time Zone [info](https://wiki.archlinux.org/title/System_time)
-```
-timedatectl list-timezones
-ln -sf /usr/share/zoneinfo/"Zone"/"Sub-Zone" /etc/localtime
-timedatectl set-timezone "Zone"/"Sub-Zone"
-timedatectl set-ntp true
-sudo hwclock --systohc --utc
-timedatectl status
-```
 
 --- 
   
@@ -105,7 +98,7 @@ NOTE: Boot is mounted next
 ```
 mount /dev/device2 /mnt
 mkdir /mnt/boot/
-mount /dev/device1 -t vfat /boot/
+mount /dev/device1 -t vfat /mnt/boot/
 ```
    
 </details>
@@ -114,7 +107,7 @@ mount /dev/device1 -t vfat /boot/
 
 > Install with pacstrap
 ```
-pacstrap /mnt linux linux-firmware linux-headers networkmanager grub wpa_supplicant base base-devel intel-ucode efibootmgr os-prober ntfs-3g dosfstools mtools sbsigntools sbctl sbsigntools efitools
+pacstrap /mnt linux linux-firmware linux-headers networkmanager grub wpa_supplicant base base-devel intel-ucode efibootmgr os-prober ntfs-3g dosfstools mtools sbsigntools sbctl efitools fish micro git
 ```
 
 > Create Fstab
@@ -126,25 +119,37 @@ cat /mnt/etc/fstab
 <details>
    <summary><b>chroot</b></summary>
 
-> Create Users
+## Create Users
 ```
 arch-chroot /mnt
 passwd
-useradd -m $USER -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/fish
+useradd -m $USER -g users -G storage,wheel -s /bin/fish
 passwd $USER
 ```
 
-> Sudo Config
+## Sudo Config
 - Edit /etc/sudoers and discomment
 ```
 %wheel ALL=(ALL:ALL) ALL
 ```
 
-> Configure Language
+## Configure Language
 - In `/etc/locale.gen` discomment `en_US.UTF-8 UTF-8` and `es_CL.UTF-8 UTF-8`, then
 ```
 locale-gen
 echo LANG=es_CL.UTF-8 > /etc/locale.conf
+```
+
+## Hostname
+- In `/etc/hostname` add your $HOSTNAME
+```
+echo $HOSTNAME > /etc/hostname
+```
+
+## Hosts
+In `/etc/hosts` add your $HOSTNAME
+```
+127.0.0.1      $HOSTNAME.localhost $HOSTNAME
 ```
 
 ---
@@ -152,22 +157,23 @@ echo LANG=es_CL.UTF-8 > /etc/locale.conf
 > NOTE: Remember only mount bootloader follow by BIOS configuration, and read [Grub](https://wiki.archlinux.org/title/GRUB) Documentation
 > Note: See [Grub#Shrim-Lock Wiki](https://wiki.archlinux.org/title/GRUB#Shim-lock)
 
-> Mount Bootloader Legacy BIOS
+### Bootloader Legacy BIOS
 ```
 grub-install /dev/sdx // (nvmexnxpx)
 ```
 
-> Mount Bootloader UEFI
+### Bootloader UEFI
 ```
-grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB --removable --recheck
+grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB --modules="tpm" --disable-shim-lock --removable --recheck
 ```
 
-### USE CA
-- Note: Test this -> `grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB --removable --recheck --modules="tpm" --disable-shim-lock`
+### Update Grub
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 ### Create keys with sbctl
-NOTE: See this message (Your system is not in Setup Mode! Please reboot your machine and reset secure boot keys before attempting to enroll the keys.)
-NOTE2: You need to delete all keys, and tpm keys, to enter in setup mode [Youtube Help](https://www.youtube.com/watch?v=yU-SE7QX6WQ)
+> enroll-keys dont work because [Acer Bios](https://wiki.archlinux.org/title/Acer_Aspire_E5-575) is Broken i think
 ```
 sudo sbctl status
 sudo sbctl create-keys
@@ -175,49 +181,17 @@ sudo sbctl enroll-keys -m
 ```
 
 ### Signing
-Note: i think only need to sign `bootx64` and `grub`
-Note2: Can be automaticed with `sbctl verify | sed 's/✗ /sbctl sign -s /e'`
+> Note: Can be automaticed with `sbctl verify | sed 's/✗ /sbctl sign -s /e'`
 ```
 sudo sbctl verify
 sudo sbctl sign -s /boot/EFI/BOOT/BOOTX64.EFI
 sudo sbctl sign -s /boot/grub/x86_64-efi/grub.efi
 sudo sbctl sign -s /boot/grub/x86_64-efi/core.efi
 sudo sbctl sign -s /boot/vmlinuz-linux
-```
-
-### After Sign
-NOTE: You need to reboot and check
-```
-reboot
-sbctl status
-```
-
-## USE MOK MANAGER
-Note: Where is sbsign??
-```
-grub-install --target=x86_64-efi --efi-directory=/boot/ --modules="tpm" --sbat /usr/share/grub/sbat.csv
-sbsign --key MOK.key --cert MOK.crt --output /boot/EFI/GRUB/grubx64.efi /boot/EFI/GRUB/grubx64.efi
-cp esp/EFI/GRUB/grubx64.efi esp/EFI/BOOT/grubx64.efi
-```
-
----
-
-> Update Grub
-```
-grub-mkconfig -o /boot/grub/grub.cfg
-```
-
-> Hostname
-- Edit `/etc/hosts`
-> Note: Change $HOSTNAME
-```
-echo $HOSTNAME > /etc/hostname
-nano /etc/hosts
-  Agregar la linea 127.0.0.1    $HOSTNAME.localhost $HOSTNAME
+sudo sbctl status
 ```
 
 </details>
-
 
 > Umount Partitions
 Note: Before reboot, disconnect Any USB Device, some bios get blocked for some reason, and need to add .efi files to get secure boot
@@ -227,9 +201,9 @@ umount -R /mnt
 reboot
 ```
 
+# First Startup
 Quick Note: Congrats!!, now with the fun part, customization.
 
-# First Startup
 ## Internet
 ```
 sudo systemctl enable NetworkManager.service --now
@@ -239,6 +213,17 @@ sudo systemctl enable NetworkManager.service --now
 ```
 localectl set-x11-keymap latam
 localectl set-locale LANG=es_CL.UTF-8
+```
+
+## Configure Local Time Zone 
+> [info](https://wiki.archlinux.org/title/System_time)
+```
+timedatectl list-timezones
+ln -sf /usr/share/zoneinfo/"Zone"/"Sub-Zone" /etc/localtime
+timedatectl set-timezone "Zone"/"Sub-Zone"
+timedatectl set-ntp true
+sudo hwclock --systohc --utc
+timedatectl status
 ```
 
 ## Repo Config
@@ -259,9 +244,25 @@ yay -S --needed - < ~/Documents/git/dotfiles-deathgabox/.package-backup/aurpkgli
 
 </details>
 
-### Install Package
+## Font
 ```
-gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-libinput bat micro
+sudo pacman -S wqy-zenhei ttf-hanazono ttf-baekmuk ttf-jetbrains-mono ttf-hack-nerd cantarell ttf-dejavu lib32-fontconfig ttf-joypixels
+```
+
+## All Package
+> Note: recomend to open weston to copy and paste 
+```
+sudo pacman -S virt-manager qemu virtualbox docker docker-compose wireshark-cli wireshark-qt adbmanager sane sane-airscan avahi cups usbmuxd mpd mpv wf-recorder gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-libinput bat micro kitty nwg-look nwg-displays imagemagick python-pygments ghostscript libheif libraw libwmf dvjulibre qt5-base qt6-base qt5-svg qt5-wayland qt6-wayland catfish tumbler thunar-volman thunar-archive-plugin xarchiver thunar-media-tags-plugin ffmpegthumbnailer libgsf libgepub libopenraw lha lrzip lzip lzop p7zip unarj unrar unzip zip tool colordiff diff-so-fancy git-delta glow highlight jq mdcat perl-image-exiftool source-highlight cdrtools html2text antiword odt2txt catdoc
+```
+
+## Permissions
+```
+sudo usermod $USER -aG games,wheel,audio,kvm,optical,storage,uucp,video,wireshark,libvirt,audio,video,adbusers,saned,cups,lp,scanner,usbmux,mpd,input,libvirt-qemu,vboxusers,docker,render
+```
+
+## Start Services
+```
+systemctl enable docker sshd avahi-daemon cups virtqemud libvirtd --now
 ```
 
 ## Wine package
@@ -291,51 +292,6 @@ alsamixer
 > Need to Reboot
 ```
 reboot
-```
-
-## Desktop
-> Install Simple Desktop Package
-```
-pacman -S wayland weston hyprland
-```
-
- <details>
-   <summary><b>Fuentes adicionales</b></summary>
-   <br>
-
-> Fuentes Asiaticas
-```
-pacman -S wqy-zenhei ttf-hanazono ttf-baekmuk
-```
-
-> Fuentes
-```
-pacman -S ttf-jetbrains-mono ttf-hack-nerd cantarell ttf-dejavu
-```
-
-> Fuentes lib32
-```
-pacman -S lib32-fontconfig
-```
-> Emojis
-```
-pacman -S ttf-joypixels
-```
-</details>
-
-## Final Extra Package
-```
-sudo pacman -S virt-manager qemu virtualbox docker docker-compose wireshark-cli wireshark-qt adbmanager sane sane-airscan avahi cups usbmuxd mpd mpv wf-recorder
-```
-
-> Final Mod Permissions
-```
-sudo usermod $USER -aG games,wheel,audio,kvm,optical,storage,uucp,video,wireshark,libvirt,audio,video,adbusers,saned,cups,lp,scanner,usbmux,mpd,input,libvirt-qemu,vboxusers,docker,render
-```
-
-> Start Services
-```
-systemctl enable docker sshd avahi-daemon cups virtqemud libvirtd --now
 ```
 
 ## Final WIP TESTING (Modprobe Kernel things) please ignore
