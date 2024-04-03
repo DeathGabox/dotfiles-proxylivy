@@ -297,3 +297,7 @@ In `commands` per game add:
 ```
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia %command%
 ```
+
+## Thunar
+[Note](https://wiki.archlinux.org/title/Thunar)
+You can navigate network with `smb://, ftp://, ssh://, sftp://, davs://`
