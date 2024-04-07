@@ -120,8 +120,10 @@ SDDM is give me problems with user@970 but i still like it, maybe if i am more o
 ```
 
 
+TODO
+- [ ] Learn How to use ewww
+- [ ] Add Screenshots
 
-FINAL NOTE WIP: When i can finally learn how to make a vertical bar with EWWW, i gonna add screenshot :D
+I really look of Kitty + Hack [Nerd Font](https://www.nerdfonts.com/) into Fastfetch
 
-But this is how Terminal look like, Kitty + Hack [Nerd Font](https://www.nerdfonts.com/)
 ![Fastfetch Screenshot](/.github/assets/Fastfetch-Github.png)
