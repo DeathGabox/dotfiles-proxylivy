@@ -187,7 +187,7 @@ My Favs <3
 - Manage QT Themes [qt6ct](https://github.com/trialuser02/qt6ct) and [qt5ct](https://github.com/desktop-app/qt5ct) for failback
 - Theme GTK [Nordic](https://github.com/EliverLara/Nordic)
 - Theme QT [Catppucin](https://github.com/catppuccin/qt5ct)
-- Icons [Papirus Icon Theme](https://archlinux.org/packages/community/any/papirus-icon-theme/)
+- Icons [Papirus Icon Theme](https://archlinux.org/packages/extra/any/papirus-icon-theme/)
 - Mouse [Volante Cursors](https://github.com/varlesh/volantes-cursors)
 - Also this [reddit thread](https://www.reddit.com/r/kde/comments/urug5v/guide_to_a_consistent_application_style_in_plasma/) can help
 
