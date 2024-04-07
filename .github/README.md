@@ -123,6 +123,7 @@ SDDM is give me problems with user@970 but i still like it, maybe if i am more o
 TODO
 - [ ] Learn How to use ewww
 - [ ] Add Screenshots
+- [ ] Make a good `pacman -S - < pkg.txt`
 
 I really look of Kitty + Hack [Nerd Font](https://www.nerdfonts.com/) into Fastfetch
 
