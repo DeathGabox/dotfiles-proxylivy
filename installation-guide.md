@@ -255,6 +255,11 @@ sudo pacman -S wqy-zenhei ttf-hanazono ttf-baekmuk ttf-jetbrains-mono ttf-hack-n
 sudo pacman -S virt-manager qemu virtualbox docker docker-compose wireshark-cli wireshark-qt adbmanager sane sane-airscan avahi cups usbmuxd mpd mpv wf-recorder gvfs gvfs-mtp xdg-user-dirs dialog xf86-input-libinput bat micro kitty nwg-look nwg-displays imagemagick python-pygments ghostscript libheif libraw libwmf dvjulibre qt5-base qt6-base qt5-svg qt5-wayland qt6-wayland catfish tumbler thunar-volman thunar-archive-plugin xarchiver thunar-media-tags-plugin ffmpegthumbnailer libgsf libgepub libopenraw lha lrzip lzip lzop p7zip unarj unrar unzip zip tool colordiff diff-so-fancy git-delta glow highlight jq mdcat perl-image-exiftool source-highlight cdrtools html2text antiword odt2txt catdoc cliphist wl-clipboard wlogout grim slurp swappy wf-recorder hyprpicker brightnessctl playerctl kitty thunar
 ```
 
+## Package env
+```
+sudo pacman -S clutter libdecor glfw glew
+```
+
 ## Permissions
 ```
 sudo usermod $USER -aG games,wheel,audio,kvm,optical,storage,uucp,video,wireshark,libvirt,audio,video,adbusers,saned,cups,lp,scanner,usbmux,mpd,input,libvirt-qemu,vboxusers,docker,render
