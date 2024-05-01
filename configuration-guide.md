@@ -4,19 +4,29 @@
 
 - [x] Read The Fabulous Manual ([RTFM](https://es.wikipedia.org/wiki/RTFM)) always, like [Archwiki](https://wiki.archlinux.org/) or Self-doc written by project, this is considered out of date by design
 
+# Info
+## Intel
+- Model: `Intel i5-6200U`
+- Graphics: `GPU HD Graphics 520`
+- Graphics-Gen: `Gen9`
+
+## Nvidia
+- Model: `Nvidia Geforce 940MX`
+- Codename Family: `NV110(Maxwell)`
+- Codename: `NV118 (GM108) GeForce 830M, 840M, 930M, 940MX`
+- Review: [TechPowerUp Specs](https://www.techpowerup.com/gpu-specs/geforce-940mx.c2845)
+
 # Configuration
-## Graphics
 
-Now, if you do correctly, you are in vanilla Archlinux, congratulations, now, configure Graphic Card, i have a `NVIDIA Geforce 940MX` Codename `NV110(Maxwell)` -> `NV118 (GM108) 	GeForce 830M, 840M, 930M, 940M[X]`
-
-Useful Links
+## Useful Links
 - READ THE WIKI AND FORUM AFTER INSTALL ANYTHING
 - AS 01/abr/2024 NVIDIA IS BROKEN, as usual, intel work good for me, configuring prime-run also work
 - [Archlinux Wiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
 - [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
 
+## THIS IS A WIP BECAUSE IS BROKEN; Keep by your own
+
 > Intall Package Intel
-> Note: Intel i5-6200U - Gen9 GPU HD Graphics 520
 ```
 sudo pacman -S mesa lib32-mesa intel-media-driver libva libva-utils lib32-libva intel-gmmlib
 ```
