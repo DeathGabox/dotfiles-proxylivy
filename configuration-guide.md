@@ -23,37 +23,27 @@
 - [Archlinux Wiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
 - [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
 
-> Intall Package Intel
-Note: For Nouveau, you only need to see if [Loading](https://wiki.archlinux.org/title/Nouveau#Loading) is correct
+## Install Package
+### Intel
+>Note: For Nouveau, you only need to see if [Loading](https://wiki.archlinux.org/title/Nouveau#Loading) is correct
 ```
 sudo pacman -S mesa lib32-mesa mesa-utils intel-gmmlib intel-media-driver libva lib32-libva libva-utils libva-mesa-driver lib32-libva-mesa-driver libvpl
 ```
-
-> Install Vulkan Compatibility
+### Vulkan
 ```
 sudo pacman -S vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-tools
 ```
 
-> Install gst-plugins
+### All GST-Driver
 ```
 sudo pacman -S gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav libde265 gst-plugin-pipewire gst-plugin-va
 ```
 
-> Enable Intel Kernel
+## Mkinitcpio
 - In `/etc/mkinitcpio.conf` at MODULES, add `i915`
-
-> Enable GuC
 - Edit `/etc/modprobe.d/i915.conf` add `options i915 enable_guc=2`
-
-> Regenerate initfram
-```
-sudo mkinitcpio -p linux
-```
-
-> is important reboot to see if work
-```
-reboot
-```
+- `sudo mkinitcpio -p linux`
+- `reboot`
 
 > Update Grub and mkinitcpio
 ```
@@ -62,26 +52,17 @@ mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
 mkinitcpio -p linux
 ```
 
-> In `~/.config/mpv/mpv.conf` add
-```
-hwdec=vaapi,auto-safe
-```
-
 ## Firefox Config 
 
 - [SimpleFox CSS Repo](https://github.com/migueravila/SimpleFox)
 
-> Write in searchbar `about:config` and turn "True" to next params :
-```
-- toolkit.legacyUserProfileCustomizations.stylesheets
-- layers.acceleration.force-enabled
-- gfx.webrender.all
-- svg.context-properties.content.enabled
-```
+> Write in searchbar `about:config` and turn "True" to next params
+- `toolkit.legacyUserProfileCustomizations.stylesheets`
+- `layers.acceleration.force-enabled`
+- `gfx.webrender.all`
+- `svg.context-properties.content.enabled`
 
-> Note1: $Firefox-Channel is the firefox Channel you selected, examples `Nightly` `Beta` `Developer` `Normal` `ESR`
-> 
-> Note2: Mozilla create weird names to the $Firefox-Default-Folder, for me, `Firefox -> u0kchxzv.default` `Firefox Developer Edition -> idknp77f.dev-edition-default` `Firefox-ESR -> rycwnmek.default-release`
+> Note1: $Firefox-Channel is the firefox Channel you selected, examples `Nightly` `Beta` `Developer` `Normal` `ESR`, maybe it's just non-sense .default folder like: `Firefox -> u0kchxzv.default` `Firefox Developer Edition -> idknp77f.dev-edition-default` `Firefox-ESR -> rycwnmek.default-release`
 ```
 cd ~/.mozilla/$Firefox-Channel/$Firefox-Default/
 mkdir chrome
@@ -89,13 +70,18 @@ mv ~/Documents/git/dotfiles-gabo/.mozilla/$CSS-Folder/* chrome/
 ```
 
 ### Fish Config
-NOTE: You need to redo all step in root mode to have fisher working well
+> [!TIP]
+> You need to redo all step in root mode to have fisher working well
+
+> [!NOTE]
+> Config File Default are
+> `~/.config/fish/config.fish` & `~/.config/fish/conf.d/`
 
 ```
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 ```
 
-> Fisher Plugins
+> Fisher Plugins, see more [here](https://github.com/jorgebucaran/awsm.fish)
 > Install [Tide](https://github.com/IlanCosman/tide)
 ```
 fisher install IlanCosman/tide@v6
@@ -106,34 +92,23 @@ fisher install IlanCosman/tide@v6
 fisher install franciscolourenco/done
 ```
 
-> Install [Alias Assisntant](https://github.com/paysonwallach/fish-you-should-use/)
-```
-fisher install paysonwallach/fish-you-should-use
-```
-
-> Install [Alias Ideas](https://github.com/gazorby/fish-abbreviation-tips)
-```
-fisher install gazorby/fish-abbreviation-tips
-```
-
 > Let Fish Shell Default
 ```
 chsh -s /bin/fish
 ```
 
-> NOTE: Config File Default are
-```
-~/.config/fish/config.fish
-~/.config/fish/conf.d/
-```
-
+---
+> [!NOTE]
 > Move .config with your configurations:
-> NOTE: To work, you need [Nerd Fonts](https://www.nerdfonts.com/), like HackNerdFont or JetBrains
-- Kitty
-- Fastfetch
-- Hyprland
-- qt5ct
-- qt6ct
+> - Kitty
+> - Fastfetch
+> - Hyprland
+> - qt5ct
+> - qt6ct
+
+> [!IMPORTANT]
+> To work, you need [Nerd Fonts](https://www.nerdfonts.com/), like HackNerdFont or JetBrains
+
 ```
 mv ~/Documents/git/dotfiles-gabo/.config ~/.config
 ```
@@ -220,6 +195,9 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 # Extra-Config
+## MPV VAAPI
+> In `~/.config/mpv/mpv.conf` add `hwdec=vaapi,auto-safe`
+
 ## Thunar Macros
 > 
 > NOTE: Modify $Printer to your printer
