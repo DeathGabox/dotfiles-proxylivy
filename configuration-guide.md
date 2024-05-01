@@ -7,7 +7,7 @@
 # Configuration
 ## Graphics
 
-Now, if you do correctly, you are in vanilla Archlinux, congratulations, now, configure Graphic Card, i have a `NVIDIA Geforce 940MX` Codename `NV118 (GM108) 	GeForce 830M, 840M, 930M, 940M[X]`
+Now, if you do correctly, you are in vanilla Archlinux, congratulations, now, configure Graphic Card, i have a `NVIDIA Geforce 940MX` Codename `NV110(Maxwell)` -> `NV118 (GM108) 	GeForce 830M, 840M, 930M, 940M[X]`
 
 Useful Links
 - READ THE WIKI AND FORUM AFTER INSTALL ANYTHING
