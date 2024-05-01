@@ -17,46 +17,53 @@
 - Review: [TechPowerUp Specs](https://www.techpowerup.com/gpu-specs/geforce-940mx.c2845)
 
 # Configuration
-
 ## Useful Links
 - READ THE WIKI AND FORUM AFTER INSTALL ANYTHING
-- AS 01/abr/2024 NVIDIA IS BROKEN, as usual, intel work good for me, configuring prime-run also work
+- LIBVDPAU IS BROKEN; DON'T INSTALL IT
 - [Archlinux Wiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
 - [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
 
-## THIS IS A WIP BECAUSE IS BROKEN; Keep by your own
-
 > Intall Package Intel
 ```
-sudo pacman -S mesa lib32-mesa intel-media-driver libva libva-utils lib32-libva intel-gmmlib
+sudo pacman -S mesa lib32-mesa mesa-utils intel-gmmlib intel-media-driver libva lib32-libva libva-utils libva-mesa-driver lib32-libva-mesa-driver libvpl
 ```
+
+> Install Vulkan Compatibility
+```
+sudo pacman -S vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-tools
+```
+
 > Install gst-plugins
 ```
 sudo pacman -S gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav libde265 gst-plugin-pipewire gst-plugin-va
 ```
+
 > Enable Intel Kernel
-- In `/etc/mkinitcpio.conf` at MODULES, add
-```
-i915
-```
+- In `/etc/mkinitcpio.conf` at MODULES, add `i915`
 
 > Enable GuC
-- Edit `/etc/modprobe.d/i915.conf` add
-```
-options i915 enable_guc=2
-```
+- Edit `/etc/modprobe.d/i915.conf` add `options i915 enable_guc=2`
+
 > Regenerate initfram
 ```
 sudo mkinitcpio -p linux
 ```
+
 > is important reboot to see if work
 ```
 reboot
 ```
 
+> Install Nouveau
+```
+
+```
+
+
+# BROKEN AAAA
 > Install Nvidia Package
 ```
-sudo pacman -S dkms nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-prime nvidia-settings libvdpau lib32-libvdpau
+sudo pacman -S dkms nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-prime nvidia-settings
 ```
 
 > Install Nvidia Acceleration Layer
@@ -65,8 +72,6 @@ sudo pacman -S dkms nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-prime nvi
 ```
 sudo pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau nvtop meson ffnvcodec-headers
 ```
-
-> Config
 
 > In `/etc/default/grub` at the end of `GRUB_CMDLINE_LINUX_DEFAULT=""` add
 > 
@@ -86,26 +91,23 @@ nvidia_drm.modeset=1
 nvidia nvidia_uvm nvidia_drm
 ```
 
-> Update Grub and mkinitcpio
-```
-grub-mkconfig -o /boot/grub/grub.cfg
-mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
-mkinitcpio -p linux
-```
-
 > In `/etc/modprobe.d/nvidia.conf` add
 ```
 options nvidia-drm modeset=1
 ```
-
 > Fix Suspend Wakeup issues
 ```
 sudo systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service
 ```
 
-> Install Vulkan
+# STOP BROKEN
+
+
+> Update Grub and mkinitcpio
 ```
-sudo pacman -S vulkan-icd-loader lib32-vulkan-icd-loader vulkan-intel lib32-vulkan-intel vulkan-tools
+grub-mkconfig -o /boot/grub/grub.cfg
+mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
+mkinitcpio -p linux
 ```
 
 > In `~/.config/mpv/mpv.conf` add
