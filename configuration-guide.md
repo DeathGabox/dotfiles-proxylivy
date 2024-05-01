@@ -69,7 +69,7 @@ mkdir chrome
 mv ~/Documents/git/dotfiles-gabo/.mozilla/$CSS-Folder/* chrome/
 ```
 
-### Fish Config
+## Fish Config
 > [!TIP]
 > You need to redo all step in root mode to have fisher working well
 
@@ -77,22 +77,26 @@ mv ~/Documents/git/dotfiles-gabo/.mozilla/$CSS-Folder/* chrome/
 > Config File Default are
 > `~/.config/fish/config.fish` & `~/.config/fish/conf.d/`
 
+### Install Fisher
 ```
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 ```
 
-> Fisher Plugins, see more [here](https://github.com/jorgebucaran/awsm.fish)
-> Install [Tide](https://github.com/IlanCosman/tide)
+### Plugins
+> [!NOTE]
+> see more plugins [here](https://github.com/jorgebucaran/awsm.fish)
+
+### Install [Tide](https://github.com/IlanCosman/tide)
 ```
 fisher install IlanCosman/tide@v6
 ```
 
-> Install [Done](https://github.com/franciscolourenco/done)
+### Install [Done](https://github.com/franciscolourenco/done)
 ```
 fisher install franciscolourenco/done
 ```
 
-> Let Fish Shell Default
+### Fish Default Shell
 ```
 chsh -s /bin/fish
 ```
