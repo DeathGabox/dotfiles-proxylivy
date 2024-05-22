@@ -199,16 +199,6 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 # Extra-Config
-## MPV VAAPI
-> In `~/.config/mpv/mpv.conf` add `hwdec=vaapi,auto-safe`
-
-## Thunar Macros
-> 
-> NOTE: Modify $Printer to your printer
-
-`exec kitty --working-directory %f`
-`lp -d $Printer -o fit-to-page -o media=letter %f`
-
 ## SDDM
 ### Installation
 > Theme [Aur](https://aur.archlinux.org/packages/sddm-theme-tokyo-night)
