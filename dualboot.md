@@ -9,3 +9,5 @@ First, boot archlinux liveiso, delete all, and make uefi partition with CFDISK, 
 When Windows is installed, reboot and install archlinux from [installation.md](/installation-guide.md)
 
 and that is, ITS NICE RIGHT
+
+I like [this](https://www.youtube.com/watch?v=NxqU1G8hKWk) Guide
