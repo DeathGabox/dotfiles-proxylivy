@@ -132,8 +132,13 @@ SDDM work with /etc/sddd.conf.d/sddm.conf with the [Tokyo Night Theme](https://a
 
 TODO
 - [ ] Learn How to use ewww
-- [ ] Add Screenshots
 
 I really look of Kitty Term + Hack [Nerd Font](https://www.nerdfonts.com/) into Fastfetch
 
-![Fastfetch Screenshot](/.github/assets/Fastfetch-Github.png)
+# Wallpaper
+
+## Fastfetch
+![Fastfetch](/.github/assets/Fastfetch-Github.png)
+
+## Screensaver
+![Screensaver Swayidle](/.github/assets/Screensaver_Swayidle.png)
