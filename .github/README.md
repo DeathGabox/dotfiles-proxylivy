@@ -133,11 +133,10 @@ SDDM work with /etc/sddd.conf.d/sddm.conf with the [Tokyo Night Theme](https://a
 TODO
 - [ ] Learn How to use ewww
 
-I really look of Kitty Term + Hack [Nerd Font](https://www.nerdfonts.com/) into Fastfetch
-
 # Wallpaper
 
 ## Fastfetch
+I really look of Kitty Term + Hack [Nerd Font](https://www.nerdfonts.com/)
 ![Fastfetch](/.github/assets/Fastfetch-Github.png)
 
 ## Screensaver
