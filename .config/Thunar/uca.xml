@@ -17,12 +17,13 @@
 	<name>Imprimir Archivo (Carta)</name>
 	<submenu></submenu>
 	<unique-id>1707779980723491-1</unique-id>
-	<command>lp -d $$Impresora -o fit-to-page -o media=letter %f</command>
+	<command>lp -d $PRINTER -o fit-to-page -o media=letter %f</command>
 	<description>Imprime Directamente</description>
 	<range></range>
 	<patterns>*.jpg;*.jpeg;*.png;*.md;*.pdf;*.txt;*.JPG;*.pdf</patterns>
 	<directories/>
 	<image-files/>
+	<other-files/>
 	<text-files/>
 </action>
 </actions>
