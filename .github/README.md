@@ -26,7 +26,9 @@ I love [Hyprland](https://hyprland.org/), and for more scalability, i made [hypr
 ```
 .config
 ├── fastfetch
-│   └── config.conf
+│   └── config.jsonc
+├── gammastep
+│   └── gammastep.config
 ├── hypr
 │   ├── bind.conf
 │   ├── env.conf
@@ -39,10 +41,10 @@ I love [Hyprland](https://hyprland.org/), and for more scalability, i made [hypr
 ├── kitty
 │   ├── color.ini
 │   └── kitty.conf
-├── fastfetch
-│   └── config.conf
 ├── lf
 │   └── lfrc
+├── micro
+│   └── settings.json
 ├── qt5ct
 │   ├── colors
 │   │   └── Catppuccin-Mocha.conf
@@ -53,10 +55,12 @@ I love [Hyprland](https://hyprland.org/), and for more scalability, i made [hypr
 │   │   └── Catppuccin-Mocha.conf
 │   ├── qss
 │   └── qt5ct.conf
-└── tofi
-    ├── config
-    ├── dmenu
-    └── soy-milk
+├── tofi
+│   ├── config
+│   ├── dmenu
+│   └── soy-milk
+└── zathura
+    └── zathurarc
 ```
 
 Mozilla CSS is a bit tricky, see [Configuration Guide](/configuration-guide.md#firefox-config) for more info
