@@ -25,6 +25,8 @@ I love [Hyprland](https://hyprland.org/), and for more scalability, i made [hypr
 
 ```
 .config
+├── btop
+│   └── btop.conf
 ├── fastfetch
 │   └── config.jsonc
 ├── gammastep
