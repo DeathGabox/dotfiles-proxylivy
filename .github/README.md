@@ -125,6 +125,8 @@ TODO
 - [ ] Add Screenshots
 - [ ] Make a good `pacman -S - < pkg.txt`
 
-I really look of Kitty + Hack [Nerd Font](https://www.nerdfonts.com/) into Fastfetch
+I really look of Kitty Term + Hack [Nerd Font](https://www.nerdfonts.com/) into Fastfetch
+
+Note: Fastfetch is broken by skill issue, i need to rewrite my config file from .config to .jsonc | [Fastfetch Wiki Explain](https://github.com/fastfetch-cli/fastfetch/wiki/Configuration)
 
 ![Fastfetch Screenshot](/.github/assets/Fastfetch-Github.png)
