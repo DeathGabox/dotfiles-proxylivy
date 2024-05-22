@@ -1,0 +1,7 @@
+autocutsel
+ctpv
+feishin-bin
+localsend-bin
+nbfc
+sddm-theme-tokyo-night-git
+tofi
