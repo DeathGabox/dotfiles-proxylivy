@@ -6,15 +6,15 @@
 
 First of all, thanks to all the wikis, for example [Official Wiki Arch](https://wiki.archlinux.org/), each one is worth reading and helping, this is just a help for me, if it helps you in something, that's great, but don't blindly trust every command, okay?
 
-Take note i use Wayland instead of Xorg, this make different design perpectives and software, examples are [gammastep](https://gitlab.com/chinstrap/gammastep) instead of [Redshift](https://github.com/jonls/redshift) because [issues with wayland](https://github.com/jonls/redshift/issues/55)
+Take note i use Wayland instead of Xorg, this make different design perpectives and software use, examples are [gammastep](https://gitlab.com/chinstrap/gammastep) instead of [Redshift](https://github.com/jonls/redshift) because [issues with wayland](https://github.com/jonls/redshift/issues/55)
 
 The [Install Guide](/installation-guide.md) gives:
 - Installation and first reboot
-- packages
+- Packages to be installed
 
 The [Config Guide](/configuration-guide.md) gives:
 - More Packages 📦
-- Graphics Install (Va-api rules)
+- Graphics Install (Va-api is awesome :D)
 - .config and extra configuration
 
 Created to be used in real env, because Hyprland can't work with good performance without GPU passthru | [Info](https://wiki.hyprland.org/Getting-Started/Master-Tutorial/#vm)
@@ -81,7 +81,7 @@ Mozilla CSS is a bit tricky, see [Configuration Guide](/configuration-guide.md#f
 
 ```
 
-SDDM is give me problems with user@970 but i still like it, maybe if i am more organized can help, SDDM work with /etc/sddd.conf.d/sddm.conf with the [Tokyo Night Theme](https://aur.archlinux.org/packages/sddm-theme-tokyo-night) 
+SDDM work with /etc/sddd.conf.d/sddm.conf with the [Tokyo Night Theme](https://aur.archlinux.org/packages/sddm-theme-tokyo-night) 
 ```
 /etc
 └── sddm.conf.d
@@ -133,10 +133,7 @@ SDDM is give me problems with user@970 but i still like it, maybe if i am more o
 TODO
 - [ ] Learn How to use ewww
 - [ ] Add Screenshots
-- [ ] Make a good `pacman -S - < pkg.txt`
 
 I really look of Kitty Term + Hack [Nerd Font](https://www.nerdfonts.com/) into Fastfetch
-
-Note: Fastfetch is broken by skill issue, i need to rewrite my config file from .config to .jsonc | [Fastfetch Wiki Explain](https://github.com/fastfetch-cli/fastfetch/wiki/Configuration)
 
 ![Fastfetch Screenshot](/.github/assets/Fastfetch-Github.png)
