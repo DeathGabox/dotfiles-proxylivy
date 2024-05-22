@@ -1,0 +1,131 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "kitty",
+    "source": "/home/deathgabox/.config/fastfetch/Lamp - For The Lovers.jpg",
+    "height": 30,
+    "padding": {
+      "top": 4,
+      "right": 2
+    }
+  },
+  "modules": [
+    "separator",
+    "title",
+    "separator",
+    {
+      "type": "host",
+      "key": "󰇅 "
+    },
+    {
+      "type": "kernel",
+      "key": " "
+    },
+    {
+      "type": "packages",
+      "key": "󰏖 "
+    },
+    {
+      "type": "processes",
+      "key": " "
+    },
+    {
+      "type": "uptime",
+      "key": " "
+    },
+    "separator",
+    {
+      "type": "cpu",
+      "key": "  "
+    },
+    {
+      "type": "gpu",
+      "key": "󱁄 {1}"
+    },
+    {
+      "type": "memory",
+      "key": "  "
+    },
+    {
+      "type": "battery",
+      "key": "󱊣 "
+    },
+    {
+      "type": "monitor",
+      "key": "󰍺  ",
+      "format": "[{1}]{2}{3}"
+    },
+    "separator",
+    {
+      "type": "datetime",
+      "key": " "
+    },
+    {
+      "type": "weather",
+      "key": " ",
+      "location": "Santiago,Chile"
+    },
+    {
+      "type": "localip",
+      "key": "󰬓 󰩠 "
+    },
+    {
+      "type": "wm",
+      "key": "󰖌 ",
+      "format": "Hyprland"
+    },
+    {
+      "type": "theme",
+      "key": "󰔎 "
+    },
+    {
+      "type": "icons",
+      "key": " "
+    },
+    {
+      "type": "cursor",
+      "key": "󰆿 "
+    },
+    {
+      "type": "font",
+      "key": " "
+    },
+    {
+      "type": "terminalfont",
+      "key": "   "
+    },
+    {
+      "type": "locale",
+      "key": "󱌅 "
+    },
+    {
+      "type": "player",
+      "key": "󰥠 "
+    },
+    {
+      "type": "media",
+      "key": "󰳩 "
+    },
+    {
+      "type": "sound",
+      "key": "󰋋 "
+    },
+    "separator",
+    {
+      "type": "version",
+      "key": " "
+    },
+    {
+      "type": "terminal",
+      "key": "  "
+    },
+    {
+      "type": "shell",
+      "key": "󰈺 "
+    },
+    "break",
+    "separator",
+    "colors",
+    "separator"
+  ]
+}
