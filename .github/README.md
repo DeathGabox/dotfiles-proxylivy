@@ -45,6 +45,8 @@ I love [Hyprland](https://hyprland.org/), and for more scalability, i made [hypr
 │   └── lfrc
 ├── micro
 │   └── settings.json
+├── mpv
+│   └── mpv.conf
 ├── qt5ct
 │   ├── colors
 │   │   └── Catppuccin-Mocha.conf
@@ -55,6 +57,8 @@ I love [Hyprland](https://hyprland.org/), and for more scalability, i made [hypr
 │   │   └── Catppuccin-Mocha.conf
 │   ├── qss
 │   └── qt5ct.conf
+├── Thunar
+│   └── uca.xml
 ├── tofi
 │   ├── config
 │   ├── dmenu
