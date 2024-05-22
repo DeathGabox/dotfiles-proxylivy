@@ -1,5 +1,7 @@
 - [x] Read The Fabulous Manual ([RTFM](https://es.wikipedia.org/wiki/RTFM)) always, like [Archwiki](https://wiki.archlinux.org/) or Self-doc written by project, this is considered out of date by design
 
+- Read [dualboot.md](/dualboot.md) if you want to install windows(WinterOS) :P
+
 # Installation
 
 You need to download an archlinux [iso](https://archlinux.org/download/) and burn the iso into a bootable usb, i recomend [Ventoy](https://github.com/ventoy/Ventoy), plug the usb in the pc, then start the installation commands, also read Official Guide Installation by [Archwiki](https://wiki.archlinux.org/title/Installation_guide)
