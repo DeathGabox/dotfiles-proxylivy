@@ -1,0 +1,15 @@
+set selection-clipboard clipboard
+set recolor true
+set recolor-darkcolor "#dcdccc"
+set recolor-lightcolor "#1f1f1f"
+set scroll-full-overlap 0.2
+set scroll-page-aware true
+set window-title-basename true
+set adjust-open width
+set statusbar-home-tilde true
+set vertical-center true
+set synctex true
+# large bold font easier on the eyes in index mode
+# status bar can be disabled with A-s
+set font "Hack Nerd Font"
+set zoom-step 3
