@@ -186,9 +186,9 @@ systemctl enable libvirtd virtqemud virtstoraged virtnodedevd virtnetworkd --now
 ```
 
 ## Steam
-In `commands` per game add:
+With Nouveau `commands` per game is:
 ```
- %command%
+DRI_PRIME=1 %command%
 ```
 
 ## Thunar
