@@ -1,43 +1,6 @@
 > Note: This is a forever work in progress
 
-[Notes to read about acceleration](https://www.linuxquestions.org/questions/slackware-14/enabling-intel-video-hardware-acceleration-4175721864/)
-
-- [x] Read The Fabulous Manual ([RTFM](https://es.wikipedia.org/wiki/RTFM)) always, like [Archwiki](https://wiki.archlinux.org/) or Self-doc written by project, this is considered out of date by design
-
-# Info
-## Intel
-- Model: `Intel i5-6200U`
-- Graphics: `GPU HD Graphics 520`
-- Graphics-Gen: `Gen9`
-
-## Nvidia
-- Model: `Nvidia Geforce 940MX`
-- Codename Family: `NV110(Maxwell)`
-- Codename: `NV118 (GM108) GeForce 830M, 840M, 930M, 940MX`
-- Review: [TechPowerUp Specs](https://www.techpowerup.com/gpu-specs/geforce-940mx.c2845)
-
-# Configuration
-## Useful Links
-- READ THE WIKI AND FORUM AFTER INSTALL ANYTHING
-- LIBVDPAU IS BROKEN; DON'T INSTALL IT
-- [Archlinux Wiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
-- [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
-
-## Install Package
-### Intel
->Note: For Nouveau, you only need to see if [Loading](https://wiki.archlinux.org/title/Nouveau#Loading) is correct
-```
-sudo pacman -S mesa lib32-mesa mesa-utils intel-gmmlib intel-media-driver libva lib32-libva libva-utils libva-mesa-driver lib32-libva-mesa-driver libvpl
-```
-### Vulkan
-```
-sudo pacman -S vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-tools
-```
-
-### All GST-Driver
-```
-sudo pacman -S gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav libde265 gst-plugin-pipewire gst-plugin-va
-```
+- [x] Read The Fabulous Manual ([RTFM](https://es.wikipedia.org/wiki/RTFM)) always, like [Archwiki](https://wiki.archlinux.org/) , [geento wiki](https://wiki.gentoo.org/wiki/Main_Page) or Self-doc written by project, this repo dotfile guide is considered out of date by design
 
 ## Mkinitcpio
 - In `/etc/mkinitcpio.conf` at MODULES, add `i915`
@@ -225,56 +188,9 @@ systemctl enable libvirtd virtqemud virtstoraged virtnodedevd virtnetworkd --now
 ## Steam
 In `commands` per game add:
 ```
-__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia %command%
+ %command%
 ```
 
 ## Thunar
 [Note](https://wiki.archlinux.org/title/Thunar)
 You can navigate network with `smb://, ftp://, ssh://, sftp://, davs://`
-
-
-# OLD
-<details>
- <summary><b>Propietary NVIDIA (I dont use)</b></summary>
- <br>
-
-> Install Nvidia Package
-```
-sudo pacman -S dkms nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-prime nvidia-settings
-```
-
-> Install Nvidia Acceleration Layer
-> 
-> NOTE: Follow [ElFarto nvidia-vaapi-driver config](https://github.com/elFarto/nvidia-vaapi-driver/)
-```
-sudo pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau nvtop meson ffnvcodec-headers
-```
-
-> In `/etc/default/grub` at the end of `GRUB_CMDLINE_LINUX_DEFAULT=""` add
-> 
-> NOTE: i dont know if `nvidia_drm.fbdev=1` works fine
-```
-nvidia_drm.modeset=1
-```
-
-> In `/etc/mkinitcpio.conf` at the `MODULES` section add
->
-> NOTE: Also remove `kms` from `HOOKS`
->
-> NOTE2: This also dont work good
->
-> NOTE3: Without nvidia_modeset seem to work good
-```
-nvidia nvidia_uvm nvidia_drm
-```
-
-> In `/etc/modprobe.d/nvidia.conf` add
-```
-options nvidia-drm modeset=1
-```
-> Fix Suspend Wakeup issues
-```
-sudo systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service
-```
-
-</details>
