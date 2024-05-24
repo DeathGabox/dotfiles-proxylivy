@@ -1,4 +1,6 @@
-- [x] Read The Fabulous Manual ([RTFM](https://es.wikipedia.org/wiki/RTFM)) always, like [Archwiki](https://wiki.archlinux.org/) or Self-doc written by project, this is considered out of date by design
+> Note: This is a forever work in progress
+
+- Read The Fabulous Manual ([RTFM](https://es.wikipedia.org/wiki/RTFM)) always, like [Archwiki](https://wiki.archlinux.org/) , [geento wiki](https://wiki.gentoo.org/wiki/Main_Page) or Self-doc written by project, this repo dotfile guide is considered out of date by design
 
 - Read [dualboot.md](/dualboot.md) if you want to install windows(WinterOS) :P
 
@@ -280,6 +282,39 @@ yay -S tofi ctpv
 ### Install Audio Server [Pipewire](https://wiki.archlinux.org/title/PipeWire)
 ```
 sudo pacman -S pipewire lib32-pipewire pipewire-docs pipewire-audio pipewire-alsa pipewire-jack pipewire-v4l2 pipewire-pulse alsa-utils bluez bluez-utils blueman pavucontrol gst-plugin-pipewire libpipewire lib32-libpipewire libwireplumber qpwgraph wireplumber
+```
+
+## Intel CPU/iGPU Model
+> [Notes to read about acceleration](https://www.linuxquestions.org/questions/slackware-14/enabling-intel-video-hardware-acceleration-4175721864/)
+- Model: `Intel i5-6200U`
+- Graphics: `GPU HD Graphics 520`
+- Graphics-Gen: `Gen9`
+
+## Nvidia dGPU Model
+- Model: `Nvidia Geforce 940MX`
+- Codename Family: `NV110(Maxwell)`
+- Codename: `NV118 (GM108) GeForce 830M, 840M, 930M, 940MX`
+- Review: [TechPowerUp Specs](https://www.techpowerup.com/gpu-specs/geforce-940mx.c2845)
+
+# Configuration
+## Useful Links
+- [Archlinux Wiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
+- [Hyprland Nvidia Section](https://wiki.hyprland.org/Nvidia/)
+
+## Install Package
+### Intel
+>Note: For Nouveau, you only need to see if [Loading](https://wiki.archlinux.org/title/Nouveau#Loading) is correct
+```
+sudo pacman -S mesa lib32-mesa mesa-utils intel-gmmlib intel-media-driver libva lib32-libva libva-utils libva-mesa-driver lib32-libva-mesa-driver libvpl
+```
+### Vulkan
+```
+sudo pacman -S vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-tools
+```
+
+### All GST-Driver
+```
+sudo pacman -S gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav libde265 gst-plugin-pipewire gst-plugin-va
 ```
 
 </details>
