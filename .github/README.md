@@ -65,6 +65,9 @@ I love [Hyprland](https://hyprland.org/), and for more scalability, i made [hypr
 │   ├── config
 │   ├── dmenu
 │   └── soy-milk
+├── wlogout
+│   ├── layout
+│   └── style.css
 └── zathura
     └── zathurarc
 ```
