@@ -59,6 +59,8 @@ I love [Hyprland](https://hyprland.org/), and for more scalability, i made [hypr
 │   │   └── Catppuccin-Mocha.conf
 │   ├── qss
 │   └── qt5ct.conf
+├── swappy
+│   └── config
 ├── Thunar
 │   └── uca.xml
 ├── tofi
