@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "loginctl lock-session",
+    "action" : "sleep 0.5 && swaylock -rnelFS --fade-in 1 --clock --font-size 20 --indicator-idle-visible --indicator-radius 75 --indicator-thickness 8 --effect-blur 3x3 --effect-pixelate 2 --effect-vignette 0.9:0.9 --indicator-image '.local/pictures/Vietra - Strawberries.jpg'",
     "text" : "Lock",
     "keybind" : "l"
 }
@@ -19,14 +19,14 @@
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff",
-    "text" : "Shutdown",
-    "keybind" : "s"
+    "text" : "Poweroff",
+    "keybind" : "p"
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend",
     "text" : "Suspend",
-    "keybind" : "u"
+    "keybind" : "s"
 }
 {
     "label" : "reboot",
