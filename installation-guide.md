@@ -209,7 +209,7 @@ Quick Note: Congrats!!, now with the fun part, customization.
 ## Make Internet Works
 Note: Next you need to connect to wifi with `nmtui`, ethernet just work
 ```
-sudo systemctl enable NetworkManager.service --now
+sudo systemctl enable NetworkManager.service bluetooth.service --now
 ```
 
 ## Spanish Mode
