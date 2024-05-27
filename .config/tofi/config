@@ -10,6 +10,7 @@
 	#
 	# Otherwise, fonts are interpreted in Pango format.
 	# Point size of text.
+	font = "JetBrainsMono Nerd Font"
 
 	# Comma separated list of OpenType font feature settings to apply,
 	# if supported by the chosen font. The format is similar to the CSS
