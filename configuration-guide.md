@@ -28,6 +28,9 @@ mkinitcpio -p linux
 > Set this to `0` to use your own fonts always ^^
 - `browser.display.use_document_fonts`
 
+> Disable Webrtc indicator
+- `toolkit.legacyUserProfileCustomizations.stylesheets`
+
 > Note1: $Firefox-Channel is the firefox Channel you selected, examples `Nightly` `Beta` `Developer` `Normal` `ESR`, maybe it's just non-sense .default folder like: `Firefox -> u0kchxzv.default` `Firefox Developer Edition -> idknp77f.dev-edition-default` `Firefox-ESR -> rycwnmek.default-release`
 ```
 cd ~/.mozilla/$Firefox-Channel/$Firefox-Default/
