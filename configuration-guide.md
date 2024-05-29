@@ -31,6 +31,9 @@ mkinitcpio -p linux
 > Disable Webrtc indicator
 - `toolkit.legacyUserProfileCustomizations.stylesheets`
 
+> Make Compact UI
+- `uc.tweak.context-menu.hide-firefox-account`
+
 > Note1: $Firefox-Channel is the firefox Channel you selected, examples `Nightly` `Beta` `Developer` `Normal` `ESR`, maybe it's just non-sense .default folder like: `Firefox -> u0kchxzv.default` `Firefox Developer Edition -> idknp77f.dev-edition-default` `Firefox-ESR -> rycwnmek.default-release`
 ```
 cd ~/.mozilla/$Firefox-Channel/$Firefox-Default/
