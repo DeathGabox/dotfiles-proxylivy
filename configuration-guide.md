@@ -29,7 +29,7 @@ mkinitcpio -p linux
 - `browser.display.use_document_fonts`
 
 > Disable Webrtc indicator
-- `???`
+- `privacy.webrtc.legacyGlobalIndicator`
 
 > Make Compact UI
 - `uc.tweak.context-menu.hide-firefox-account`
