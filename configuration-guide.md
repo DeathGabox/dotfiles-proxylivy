@@ -19,7 +19,8 @@ mkinitcpio -p linux
 
 - [SimpleFox CSS Repo](https://github.com/migueravila/SimpleFox)
 
-> Write in searchbar `about:config` and turn "True" to next params
+Write in searchbar `about:config`
+> Set to `True`
 - `toolkit.legacyUserProfileCustomizations.stylesheets`
 - `layers.acceleration.force-enabled`
 - `gfx.webrender.all`
@@ -28,11 +29,36 @@ mkinitcpio -p linux
 > Set this to `0` to use your own fonts always ^^
 - `browser.display.use_document_fonts`
 
-> Disable Webrtc indicator
+> Disable Webrtc indicator (Set to `False`)
 - `privacy.webrtc.legacyGlobalIndicator`
 
-> Make Compact UI
+> Make Compact UI (Set to `True`)
 - `uc.tweak.context-menu.hide-firefox-account`
+
+> Disable Ugly Suggestion (Set to `False`)
+- `browser.urlbar.autoFill`
+- `browser.formfill.enable`
+- `browser.search.suggest.enabled`
+
+> Use more Net cache :D (Thank to this answer in [Reddit](https://www.reddit.com/r/firefox/comments/17hlkhp/comment/k6ogtuv/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+- `network.buffer.cache.size` to `524288` -> 512KB
+- `network.buffer.cache.count` to `128`
+- `network.http.max-connections` to `1800`
+- `network.http.max-persistent-connections-per-server` to `12`
+- `network.http.max-urgent-start-excessive-connections-per-host` to `8`
+- `network.http.pacing.requests.burst` to `8`
+- `network.http.pacing.requests.min-parallelism` to `8`
+- `network.websocket.max-connections` to `400`
+- `network.ssl_tokens_cache_capacity` to `32768`
+
+> Limit Animation
+- `full-screen-api.warning.timeout` to `50`
+- `full-screen-api.transition.timeout` to `0`
+
+> Misc
+- `image.http.accept` to `*/*`
+- `browser.tabs.warnOnClose` to `true`
+- 
 
 > Note1: $Firefox-Channel is the firefox Channel you selected, examples `Nightly` `Beta` `Developer` `Normal` `ESR`, maybe it's just non-sense .default folder like: `Firefox -> u0kchxzv.default` `Firefox Developer Edition -> idknp77f.dev-edition-default` `Firefox-ESR -> rycwnmek.default-release`
 ```
