@@ -11,3 +11,6 @@ When Windows is installed, reboot and install archlinux from [installation.md](/
 and that is, ITS NICE RIGHT
 
 I like [this](https://www.youtube.com/watch?v=NxqU1G8hKWk) Guide
+
+Windows tend to monopoly, so need to screw everything that not even control, that is grub, for me is "Recheck Disk Countdown" from Windows 11, i need to boot live iso, connect to internet, mount /mnt and /mnt/boot/.
+Next 'arch-chroot /mnt', and update the system, next execute instalation of grub and redo mkinitcpio
