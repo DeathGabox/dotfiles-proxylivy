@@ -1,9 +1,7 @@
-# Dotfiles
+# Dotfiles-ProxyLivy
 ![GitHub](https://img.shields.io/github/license/DeathGabox/DotFiles?color=green&logo=GitBook&logoColor=red&style=for-the-badge)
 ![GitHub Repo stars](https://img.shields.io/github/stars/DeathGabox/DotFiles?color=9cf&label=Stars%20%3C3&logo=github&logoColor=black&style=for-the-badge)
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/DeathGabox/DotFiles/main?color=blueviolet&label=Commit&logo=github&logoColor=black&style=for-the-badge)
-
-[![Welcome](/.github/assets/dotfiles-proxylivy.png)](https://rose-pine-images.vercel.app/)
 
 First of all, thanks to all the wikis, for example [Official Wiki Arch](https://wiki.archlinux.org/), each one is worth reading and helping, this is just a help for me, if it helps you in something, that's great, but don't blindly trust every command, okay?
 
