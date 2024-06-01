@@ -17,7 +17,7 @@ mkinitcpio -p linux
 
 ## Firefox Config 
 
-- [SimpleFox CSS Repo](https://github.com/migueravila/SimpleFox)
+- [SimpleFox CSS Repo](https://github.com/migueravila/SimpleFox), Read [This Guide](https://www.quippd.com/firefox/wiki/useful-customizations/) and This [Reddit Answer](https://www.reddit.com/r/firefox/comments/17hlkhp/comment/k6ogtuv/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) and [Betterfox - Fastfox.js](https://github.com/yokoffing/Betterfox/blob/main/Fastfox.js)
 
 Write in searchbar `about:config`
 > Set to `True`
@@ -25,6 +25,23 @@ Write in searchbar `about:config`
 - `layers.acceleration.force-enabled`
 - `gfx.webrender.all`
 - `svg.context-properties.content.enabled`
+
+> PDF Dark Mode (wow)
+- `pdfjs.forcePageColors` to `true`
+- `pdfjs.pageColorsBackground` to `#202020` | default `Canvas`
+- `pdfjs.pageColorsForeground` to `#d1d1d1` | default `CanvasText`
+
+> Vaapi Via FFMPEG Acceleration
+- `media.ffmpeg.vaapi.enabled` to `true`
+
+> Smaller Tabs Width
+- `browser.tabs.tabMinWidth` to `50`
+
+> Disable Firefox Screenshot
+- `extensions.screenshots.disabled` to `true`
+
+> Disable Autoplay
+- `media.autoplay.blocking_policy` to `2`
 
 > Set this to `0` to use your own fonts always ^^
 - `browser.display.use_document_fonts`
@@ -39,8 +56,10 @@ Write in searchbar `about:config`
 - `browser.urlbar.autoFill`
 - `browser.formfill.enable`
 - `browser.search.suggest.enabled`
+- `extensions.formautofill.addresses.enabled`
+- `extensions.formautofill.creditCards.enabled`
 
-> Use more Net cache :D (Thank to this answer in [Reddit](https://www.reddit.com/r/firefox/comments/17hlkhp/comment/k6ogtuv/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+> Use more Net cache :D
 - `network.buffer.cache.size` to `524288` -> 512KB
 - `network.buffer.cache.count` to `128`
 - `network.http.max-connections` to `1800`
@@ -51,14 +70,53 @@ Write in searchbar `about:config`
 - `network.websocket.max-connections` to `400`
 - `network.ssl_tokens_cache_capacity` to `32768`
 
-> Limit Animation
-- `full-screen-api.warning.timeout` to `50`
+> Fastest Full Screen, this can set to `0` but can generate some troubles :p
+- `full-screen-api.warning.timeout` to `20`
+- `full-screen-api.warning.delay` to `20`
 - `full-screen-api.transition.timeout` to `0`
 
-> Misc
+> Accept more images than webp (kinda deprecated)
 - `image.http.accept` to `*/*`
+
+> Warn when close firefox with tabs
 - `browser.tabs.warnOnClose` to `true`
-- 
+
+> Disable "Update Page" in firefox after an upgrade
+- `browser.startup.upgradeDialog.enabled` to `false`
+
+> Disable Automatic pop-up when download is finished
+- `browser.download.alwaysOpenPanel` to `false`
+
+> Faster Mouse Wheel
+- `mousewheel.default.delta_multiplier_y` to `200`
+
+> Smooth Mouse :D
+- `general.smoothScroll.msdPhysics.enabled` to `true`
+
+> Open Bookmark in new tab
+- `browser.tabs.loadBookmarksInTabs` to `true`
+
+> Enable More RAM consuming, less HDD (I dont use but help a lot in old machines)
+- `browser.cache.disk.enable` to `false`
+- `browser.cache.memory.capacity` to `-1` (Unlimited i guess)
+- `media.memory_cache_max_size` to bigger number
+
+> What is this ADs?? please disable
+- `browser.vpn_promo.enabled` to `false`
+- `browser.newtabpage.activity-stream.feeds.recommendationprovider` to `false`
+- `extensions.htmlaboutaddons.recommendations.enabled` to `false`
+
+> Disable telemetry
+- `browser.discovery.enabled` to `false`
+- `datareporting.healthreport.uploadEnabled` to `false`
+
+> Force Secure HTTPS Conection (Break EA.com, well, who cares ;p)
+- `security.ssl.require_safe_negotiation` to `true`
+
+> Max GFX.accelerated
+- `gfx.canvas.accelerated.cache-items` to `4096` | default `2048`
+- `gfx.canvas.accelerated.cache-size` to `1024` | default `256`
+- `gfx.content.skia-font-cache-size` to `20` | default `5`
 
 > Note1: $Firefox-Channel is the firefox Channel you selected, examples `Nightly` `Beta` `Developer` `Normal` `ESR`, maybe it's just non-sense .default folder like: `Firefox -> u0kchxzv.default` `Firefox Developer Edition -> idknp77f.dev-edition-default` `Firefox-ESR -> rycwnmek.default-release`
 ```
