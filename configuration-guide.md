@@ -17,7 +17,7 @@ mkinitcpio -p linux
 
 ## Firefox Config 
 
-- [SimpleFox CSS Repo](https://github.com/migueravila/SimpleFox), Read [This Guide](https://www.quippd.com/firefox/wiki/useful-customizations/) and This [Reddit Answer](https://www.reddit.com/r/firefox/comments/17hlkhp/comment/k6ogtuv/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) and [Betterfox - Fastfox.js](https://github.com/yokoffing/Betterfox/blob/main/Fastfox.js)
+- [SimpleFox CSS Repo](https://github.com/migueravila/SimpleFox), Read [This Guide](https://www.quippd.com/firefox/wiki/useful-customizations/) and This [Reddit Answer](https://www.reddit.com/r/firefox/comments/17hlkhp/comment/k6ogtuv/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) and [Betterfox - Fastfox.js](https://github.com/yokoffing/Betterfox/blob/main/Fastfox.js), [Arkenfox GUI](https://arkenfox.github.io/gui/)
 
 > Note1: $Firefox-Channel is the firefox Channel you selected, examples `Nightly` `Beta` `Developer` `Normal` `ESR`, maybe it's just non-sense .default folder like: `Firefox -> u0kchxzv.default` `Firefox Developer Edition -> idknp77f.dev-edition-default` `Firefox-ESR -> rycwnmek.default-release`
 ```
@@ -110,13 +110,36 @@ mv ~/Documents/git/dotfiles-gabo/.mozilla/$CSS-Folder/* chrome/
 > What is this ADs?? please disable
 - `browser.vpn_promo.enabled` to `false`
 - `browser.newtabpage.activity-stream.feeds.recommendationprovider` to `false`
+- `browser.newtabpage.activity-stream.showSponsored` to `false`
 - `extensions.htmlaboutaddons.recommendations.enabled` to `false`
 
 > Disable telemetry
 - `browser.discovery.enabled` to `false`
+- `datareporting.policy.dataSubmissionEnabled` to `false`
 - `datareporting.healthreport.uploadEnabled` to `false`
+- `toolkit.telemetry.unified` to `false`
+- `toolkit.telemetry.archive.enabled` to `false`
+- `toolkit.telemetry.newProfilePing.enabled` to `false`
+- `toolkit.telemetry.shutdownPingSender.enabled` to `false`
+- `toolkit.telemetry.updatePing.enabled` to `false`
+- `toolkit.telemetry.bhrPing.enabled` to `false`
+- `toolkit.telemetry.firstShutdownPing.enabled` to `false`
+- `toolkit.telemetry.coverage.opt-out` (hidden|logic) to `true`
+- `toolkit.coverage.opt-out` (hidden|logic) to `true`
+- `toolkit.coverage.endpoint.base` to `""`
+- `browser.ping-centre.telemetry` to `false`
+- `browser.newtabpage.activity-stream.feeds.telemetry` to `false`
+- `browser.newtabpage.activity-stream.telemetry` to `false`
+- `app.normandy.api_url` to `""`
 
-> Force Secure HTTPS Conection (Break EA.com, well, who cares ;p)
+> Disable Crash Report
+- `breakpad.reportURL` to `""`
+- `browser.tabs.crashReporting.sendReport` to `false`
+
+> Prevent Script move windows
+- `dom.disable_window_move_resize` to `true`
+
+> Force Secure HTTPS Conection
 - `security.ssl.require_safe_negotiation` to `true`
 
 > Max GFX.accelerated
