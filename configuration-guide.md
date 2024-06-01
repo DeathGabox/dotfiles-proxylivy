@@ -19,7 +19,14 @@ mkinitcpio -p linux
 
 - [SimpleFox CSS Repo](https://github.com/migueravila/SimpleFox), Read [This Guide](https://www.quippd.com/firefox/wiki/useful-customizations/) and This [Reddit Answer](https://www.reddit.com/r/firefox/comments/17hlkhp/comment/k6ogtuv/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) and [Betterfox - Fastfox.js](https://github.com/yokoffing/Betterfox/blob/main/Fastfox.js)
 
-Write in searchbar `about:config`
+> Note1: $Firefox-Channel is the firefox Channel you selected, examples `Nightly` `Beta` `Developer` `Normal` `ESR`, maybe it's just non-sense .default folder like: `Firefox -> u0kchxzv.default` `Firefox Developer Edition -> idknp77f.dev-edition-default` `Firefox-ESR -> rycwnmek.default-release`
+```
+cd ~/.mozilla/$Firefox-Channel/$Firefox-Default/
+mkdir chrome
+mv ~/Documents/git/dotfiles-gabo/.mozilla/$CSS-Folder/* chrome/
+```
+
+### Write in search-bar `about:config`
 > Set to `True`
 - `toolkit.legacyUserProfileCustomizations.stylesheets`
 - `layers.acceleration.force-enabled`
@@ -117,12 +124,6 @@ Write in searchbar `about:config`
 - `gfx.canvas.accelerated.cache-size` to `1024` | default `256`
 - `gfx.content.skia-font-cache-size` to `20` | default `5`
 
-> Note1: $Firefox-Channel is the firefox Channel you selected, examples `Nightly` `Beta` `Developer` `Normal` `ESR`, maybe it's just non-sense .default folder like: `Firefox -> u0kchxzv.default` `Firefox Developer Edition -> idknp77f.dev-edition-default` `Firefox-ESR -> rycwnmek.default-release`
-```
-cd ~/.mozilla/$Firefox-Channel/$Firefox-Default/
-mkdir chrome
-mv ~/Documents/git/dotfiles-gabo/.mozilla/$CSS-Folder/* chrome/
-```
 
 ## Fish Config
 > [!TIP]
@@ -151,6 +152,11 @@ fisher install IlanCosman/tide@v6
 fisher install franciscolourenco/done
 ```
 
+### Install [Rose Pine Theme](https://github.com/rose-pine/fish)
+```
+fisher install rose-pine/fish
+```
+
 ### Fish Default Shell
 ```
 chsh -s /bin/fish
@@ -177,32 +183,14 @@ mv ~/Documents/git/dotfiles-gabo/.config ~/.config
 My Favs <3
 - Manage GTK Themes [nwg-look](https://github.com/nwg-piotr/nwg-look)
 - Manage QT Themes [qt6ct](https://github.com/trialuser02/qt6ct) and [qt5ct](https://github.com/desktop-app/qt5ct) for failback
-- Theme GTK [Nordic](https://github.com/EliverLara/Nordic)
-- Theme QT [Catppucin](https://github.com/catppuccin/qt5ct)
+- Theme GTK [Rose Pale Moon](https://github.com/rose-pine/gtk) | ~~[Nordic](https://github.com/EliverLara/Nordic)~~
+- Theme QT [Rose Pale Moon](https://github.com/SarahAllenReed/rose-pine-qt5ct) | ~~[Catppucin](https://github.com/catppuccin/qt5ct)~~
 - Icons [Papirus Icon Theme](https://archlinux.org/packages/extra/any/papirus-icon-theme/)
-- Mouse [Volante Cursors](https://github.com/varlesh/volantes-cursors)
+- Mouse [Rose Pine Cursors](https://rosepinetheme.com/themes/cursor/) | ~~[Volante Cursors](https://github.com/varlesh/volantes-cursors)~~ an ~~[BreezeX Black](https://github.com/ful1e5/BreezeX_Cursor)~~
 - Also this [reddit thread](https://www.reddit.com/r/kde/comments/urug5v/guide_to_a_consistent_application_style_in_plasma/) can help
 
-```
-cd /home/$USER/Documentos/github
-git clone https://github.com/EliverLara/Nordic.git
-sudo mv Nordic/ /usr/share/themes
-```
-
-> Cursors
-```
-cd /home/$USER/Documentos/github
-wget https://github.com/ful1e5/BreezeX_Cursor/releases/download/v2.0.0/BreezeX-Black.tar.gz
-tar xvf BreezeX-Black.tar.gz
-rm -drf BreezeX-Black.tar.gz
-sudo mv BreezeX-* /usr/share/icons/
-```
-
-> QT
-> NOTE: add `QT_QPA_PLATFORMTHEME=qt6ct` to your env file and reboot
-
 <details>
- <summary><b>Configure path to qt6ct User & Root</b></summary>
+ <summary><b>paths to qt6ct User & Root and Colors</b></summary>
  <br>
 
 User Files
@@ -219,7 +207,7 @@ Root Files
 - Shared color scheme paths:"/usr/share/qt6ct/colors")
 ```
 
-Colors
+Catpuccin Colors means
 ```
 Catppuccin-Frappe.conf      (Light Mode)
 Catppuccin-Latte.conf       (Dark Mode)
