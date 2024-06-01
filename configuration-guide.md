@@ -53,7 +53,6 @@ Write in searchbar `about:config`
 - `uc.tweak.context-menu.hide-firefox-account`
 
 > Disable Ugly Suggestion (Set to `False`)
-- `browser.urlbar.autoFill`
 - `browser.formfill.enable`
 - `browser.search.suggest.enabled`
 - `extensions.formautofill.addresses.enabled`
