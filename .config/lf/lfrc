@@ -1,5 +1,5 @@
 # CMD
-cmd trash %trash-put $fx
+cmd trash %trash-put "$fx"
 cmd open-async $xdg-open "$(realpath "$f" &)"
 
 # Mapeo de teclas
