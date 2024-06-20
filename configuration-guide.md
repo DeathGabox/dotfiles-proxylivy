@@ -265,6 +265,24 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 # Extra-Config
+## XDG-MIME
+This is a life-changer for app like lf, all is about context ^^
+
+- `xdg-mime default org.xfce.mousepad.desktop text/plain`
+- `xdg-mime default org.xfce.mousepad.desktop application/x-subrip`
+- `xdg-mime default org.xfce.mousepad.desktop application/javascript`
+- `xdg-mime default org.pwmt.zathura.desktop application/pdf`
+- `xdg-mime default thunar.desktop inode/directory`
+- `xdg-mime default imv-dir.desktop image/jpeg`
+- `xdg-mime default imv-dir.desktop image/png`
+- `xdg-mime default imv-dir.desktop image/svg+xml`
+- `xdg-mime default imv-dir.desktop image/heic`
+- `xdg-mime default mpv.desktop video/mp4`
+- `xdg-mime default mpv.desktop video/x-matroska`
+- `xdg-mime default mpv.desktop video/mpeg`
+- `xdg-mime default mpv.desktop video/quicktime`
+- `xdg-mime default mpv.desktop audio/ogg`
+
 ## SDDM
 ### Installation
 > Theme [Aur](https://aur.archlinux.org/packages/sddm-theme-tokyo-night)
