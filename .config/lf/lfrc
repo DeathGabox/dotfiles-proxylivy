@@ -1,12 +1,13 @@
 # CMD
 cmd trash %trash-put $fx
-cmd open $xdg-open "$(realpath "$f")"
+cmd open-async $xdg-open "$(realpath "$f" &)"
 
 # Mapeo de teclas
 map D trash
 
 # fzf only actual directory
 map f $xdg-open "$(find . -type f 2>/dev/null | fzf | xargs -d '\n' realpath)"
+
 # fzf Precompiled
 map F $xdg-open "$(cat ~/.cache/fzf_files | fzf | xargs -d '\n' realpath)"
 
