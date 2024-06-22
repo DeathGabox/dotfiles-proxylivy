@@ -269,6 +269,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 This is a life-changer for app like lf, all is about context ^^
 
 - `xdg-mime default org.xfce.mousepad.desktop text/plain`
+- `xdg-mime default org.xfce.mousepad.desktop text/xml`
 - `xdg-mime default org.xfce.mousepad.desktop application/x-subrip`
 - `xdg-mime default org.xfce.mousepad.desktop application/javascript`
 - `xdg-mime default org.pwmt.zathura.desktop application/pdf`
