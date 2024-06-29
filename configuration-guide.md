@@ -47,6 +47,9 @@ mv ~/Documents/git/dotfiles-gabo/.mozilla/$CSS-Folder/* chrome/
 > Disable Firefox Screenshot
 - `extensions.screenshots.disabled` to `true`
 
+> Disable Translation Popup
+- `browser.translations.automaticallyPopup` to `false`
+
 > Disable Autoplay (Playlist stop too 😲) | `2` stop every domain | `1` block autoplay | `0` permit autoplay
 - `media.autoplay.blocking_policy` to `2`
 
