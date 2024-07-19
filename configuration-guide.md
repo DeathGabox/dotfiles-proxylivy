@@ -305,10 +305,8 @@ cat sddm.conf > /etc/sddm.conf.d/sddm.conf
 user="$USER"
 group="libvirt-qemu"
 ```
-### Enable Systemctl
-```
-systemctl enable libvirtd virtqemud virtstoraged virtnodedevd virtnetworkd --now
-```
+
+Use [Modular Daemon](https://libvirt.org/daemons.html#switching-to-modular-daemons) instead of monolitic daemon
 
 ## Steam
 With Nouveau `commands` per game is:
